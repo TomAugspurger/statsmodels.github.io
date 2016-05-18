@@ -88,4 +88,10 @@ statsmodels.sandbox.distributions.extras.NormExpan_gen
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NormExpan_gen.random_state
+   
    

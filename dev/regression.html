@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Linear Regression &mdash; statsmodels 0.7.0 documentation</title>
+    <title>Linear Regression &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,9 +26,9 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="index.html" />
-    <link rel="next" title="Ordinary Least Squares" href="examples/notebooks/generated/ols.html" />
-    <link rel="prev" title="statsmodels.stats.contrast.ContrastResults.summary_frame" href="dev/generated/statsmodels.stats.contrast.ContrastResults.summary_frame.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="index.html" />
+    <link rel="next" title="statsmodels.regression.linear_model.OLS" href="generated/statsmodels.regression.linear_model.OLS.html" />
+    <link rel="prev" title="Testing on Build Machines" href="dev/testing.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="_static/scripts.js">
@@ -55,10 +55,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="examples/notebooks/generated/ols.html" title="Ordinary Least Squares"
+          <a href="generated/statsmodels.regression.linear_model.OLS.html" title="statsmodels.regression.linear_model.OLS"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="dev/generated/statsmodels.stats.contrast.ContrastResults.summary_frame.html" title="statsmodels.stats.contrast.ContrastResults.summary_frame"
+          <a href="dev/testing.html" title="Testing on Build Machines"
              accesskey="P">previous</a> |</li>
 <li><a href ="install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -89,26 +89,56 @@ autocorrelated AR(p) errors.</p>
 <p>See <a class="reference internal" href="#module-reference">Module Reference</a> for commands and arguments.</p>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Load modules and data</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
-<span class="n">spector_data</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">spector</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-<span class="n">spector_data</span><span class="o">.</span><span class="n">exog</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">spector_data</span><span class="o">.</span><span class="n">exog</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight-ipython"><div class="highlight"><pre><span></span><span class="go"># Load modules and data</span>
+<span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="c"># Fit and summarize OLS model</span>
-<span class="n">mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">spector_data</span><span class="o">.</span><span class="n">endog</span><span class="p">,</span> <span class="n">spector_data</span><span class="o">.</span><span class="n">exog</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="gp">In [2]: </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+
+<span class="gp">In [3]: </span><span class="n">spector_data</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">spector</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+<span class="gp">In [4]: </span><span class="n">spector_data</span><span class="o">.</span><span class="n">exog</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">spector_data</span><span class="o">.</span><span class="n">exog</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="go"># Fit and summarize OLS model</span>
+<span class="gp">In [5]: </span><span class="n">mod</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">spector_data</span><span class="o">.</span><span class="n">endog</span><span class="p">,</span> <span class="n">spector_data</span><span class="o">.</span><span class="n">exog</span><span class="p">)</span>
+
+<span class="gp">In [6]: </span><span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="gp">In [7]: </span><span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+<span class="go">                            OLS Regression Results                            </span>
+<span class="go">==============================================================================</span>
+<span class="go">Dep. Variable:                      y   R-squared:                       0.416</span>
+<span class="go">Model:                            OLS   Adj. R-squared:                  0.353</span>
+<span class="go">Method:                 Least Squares   F-statistic:                     6.646</span>
+<span class="go">Date:                Tue, 17 May 2016   Prob (F-statistic):            0.00157</span>
+<span class="go">Time:                        11:58:29   Log-Likelihood:                -12.978</span>
+<span class="go">No. Observations:                  32   AIC:                             33.96</span>
+<span class="go">Df Residuals:                      28   BIC:                             39.82</span>
+<span class="go">Df Model:                           3                                         </span>
+<span class="go">Covariance Type:            nonrobust                                         </span>
+<span class="go">==============================================================================</span>
+<span class="go">                 coef    std err          t      P&gt;|t|      [0.025      0.975]</span>
+<span class="gt">------------------------------------------------------------------------------</span>
+<span class="n">x1</span>             <span class="mf">0.4639</span>      <span class="mf">0.162</span>      <span class="mf">2.864</span>      <span class="mf">0.008</span>       <span class="mf">0.132</span>       <span class="mf">0.796</span>
+<span class="n">x2</span>             <span class="mf">0.0105</span>      <span class="mf">0.019</span>      <span class="mf">0.539</span>      <span class="mf">0.594</span>      <span class="o">-</span><span class="mf">0.029</span>       <span class="mf">0.050</span>
+<span class="n">x3</span>             <span class="mf">0.3786</span>      <span class="mf">0.139</span>      <span class="mf">2.720</span>      <span class="mf">0.011</span>       <span class="mf">0.093</span>       <span class="mf">0.664</span>
+<span class="n">const</span>         <span class="o">-</span><span class="mf">1.4980</span>      <span class="mf">0.524</span>     <span class="o">-</span><span class="mf">2.859</span>      <span class="mf">0.008</span>      <span class="o">-</span><span class="mf">2.571</span>      <span class="o">-</span><span class="mf">0.425</span>
+<span class="o">==============================================================================</span>
+<span class="ne">Omnibus</span>:                        0.176   Durbin-Watson:                   2.346
+<span class="n">Prob</span><span class="p">(</span><span class="n">Omnibus</span><span class="p">):</span>                  <span class="mf">0.916</span>   <span class="n">Jarque</span><span class="o">-</span><span class="n">Bera</span> <span class="p">(</span><span class="n">JB</span><span class="p">):</span>                <span class="mf">0.167</span>
+<span class="ne">Skew</span>:                           0.141   Prob(JB):                        0.920
+<span class="ne">Kurtosis</span>:                       2.786   Cond. No.                         176.
+<span class="o">==============================================================================</span>
+
+<span class="ne">Warnings</span>:
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Standard</span> <span class="n">Errors</span> <span class="n">assume</span> <span class="n">that</span> <span class="n">the</span> <span class="n">covariance</span> <span class="n">matrix</span> <span class="n">of</span> <span class="n">the</span> <span class="n">errors</span> <span class="ow">is</span> <span class="n">correctly</span> <span class="n">specified</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Detailed examples can be found here:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/notebooks/generated/ols.html">Ordinary Least Squares</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/notebooks/generated/wls.html">Weighted Least Squares</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples/notebooks/generated/gls.html">Generalized Least Squares</a></li>
+<ul class="simple">
+<li><a class="reference external" href="examples/notebooks/generated/ols.html">OLS</a></li>
+<li><a class="reference external" href="examples/notebooks/generated/wls.html">WLS</a></li>
+<li><a class="reference external" href="examples/notebooks/generated/gls.html">GLS</a></li>
 </ul>
-</div>
 </div>
 <div class="section" id="technical-documentation">
 <h2>Technical Documentation<a class="headerlink" href="#technical-documentation" title="Permalink to this headline">¶</a></h2>
@@ -148,35 +178,35 @@ specific methods and attributes.</p>
 <p>The following is more verbose description of the attributes which is mostly
 common to all regression classes</p>
 <dl class="docutils">
-<dt>pinv_wexog <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd>The <cite>p</cite> x <cite>n</cite> Moore-Penrose pseudoinverse of the whitened design matrix.
+<dt>pinv_wexog</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array</span><dd>The <cite>p</cite> x <cite>n</cite> Moore-Penrose pseudoinverse of the whitened design matrix.
 It is approximately equal to
 <img class="math" src="_images/math/9f5d2ed73545219dd5cb872c38120c77871966b2.png" alt="\left(X^{T}\Sigma^{-1}X\right)^{-1}X^{T}\Psi" style="vertical-align: -7px"/>, where
 <img class="math" src="_images/math/fcb42b580fc37b67d357c1314f2be5e2057d0917.png" alt="\Psi" style="vertical-align: -1px"/> is defined such that <img class="math" src="_images/math/b7b36d7aa95c524cfeb4be06125559567e28fd44.png" alt="\Psi\Psi^{T}=\Sigma^{-1}" style="vertical-align: -1px"/>.</dd>
-<dt>cholsimgainv <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd>The <cite>n</cite> x <cite>n</cite> upper triangular matrix <img class="math" src="_images/math/fad95267980d696a1f284eca62df8a18c95c3f5b.png" alt="\Psi^{T}" style="vertical-align: -1px"/> that satisfies
+<dt>cholsimgainv</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array</span><dd>The <cite>n</cite> x <cite>n</cite> upper triangular matrix <img class="math" src="_images/math/fad95267980d696a1f284eca62df8a18c95c3f5b.png" alt="\Psi^{T}" style="vertical-align: -1px"/> that satisfies
 <img class="math" src="_images/math/b7b36d7aa95c524cfeb4be06125559567e28fd44.png" alt="\Psi\Psi^{T}=\Sigma^{-1}" style="vertical-align: -1px"/>.</dd>
-<dt>df_model <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd>The model degrees of freedom. This is equal to <cite>p</cite> - 1, where <cite>p</cite> is the
+<dt>df_model</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd>The model degrees of freedom. This is equal to <cite>p</cite> - 1, where <cite>p</cite> is the
 number of regressors. Note that the intercept is not counted as using a
 degree of freedom here.</dd>
-<dt>df_resid <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd>The residual degrees of freedom. This is equal <cite>n - p</cite> where <cite>n</cite> is the
+<dt>df_resid</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd>The residual degrees of freedom. This is equal <cite>n - p</cite> where <cite>n</cite> is the
 number of observations and <cite>p</cite> is the number of parameters. Note that the
 intercept is counted as using a degree of freedom here.</dd>
-<dt>llf <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd>The value of the likelihood function of the fitted model.</dd>
-<dt>nobs <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd>The number of observations <cite>n</cite></dd>
-<dt>normalized_cov_params <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd>A <cite>p</cite> x <cite>p</cite> array equal to <img class="math" src="_images/math/11de5b6c8dd16fe8f4ac94812cee0054d09f742c.png" alt="(X^{T}\Sigma^{-1}X)^{-1}" style="vertical-align: -4px"/>.</dd>
-<dt>sigma <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd>The <cite>n</cite> x <cite>n</cite> covariance matrix of the error terms:
+<dt>llf</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd>The value of the likelihood function of the fitted model.</dd>
+<dt>nobs</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd>The number of observations <cite>n</cite></dd>
+<dt>normalized_cov_params</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array</span><dd>A <cite>p</cite> x <cite>p</cite> array equal to <img class="math" src="_images/math/11de5b6c8dd16fe8f4ac94812cee0054d09f742c.png" alt="(X^{T}\Sigma^{-1}X)^{-1}" style="vertical-align: -4px"/>.</dd>
+<dt>sigma</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array</span><dd>The <cite>n</cite> x <cite>n</cite> covariance matrix of the error terms:
 <img class="math" src="_images/math/0fa08be7c8b5c8c816ae2ff8706f9f50273d42b4.png" alt="\mu\sim N\left(0,\Sigma\right)" style="vertical-align: -4px"/>.</dd>
-<dt>wexog <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd>The whitened design matrix <img class="math" src="_images/math/0db333ce57a2ec88f0c7881825bcbc24e48d1e9e.png" alt="\Psi^{T}X" style="vertical-align: -1px"/>.</dd>
-<dt>wendog <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
-<dd>The whitened response variable <img class="math" src="_images/math/e36635011ab943664eecbcb9eed215244ec1f8a5.png" alt="\Psi^{T}Y" style="vertical-align: -1px"/>.</dd>
+<dt>wexog</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array</span><dd>The whitened design matrix <img class="math" src="_images/math/0db333ce57a2ec88f0c7881825bcbc24e48d1e9e.png" alt="\Psi^{T}X" style="vertical-align: -1px"/>.</dd>
+<dt>wendog</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array</span><dd>The whitened response variable <img class="math" src="_images/math/e36635011ab943664eecbcb9eed215244ec1f8a5.png" alt="\Psi^{T}Y" style="vertical-align: -1px"/>.</dd>
 </dl>
 </div>
 </div>
@@ -285,11 +315,11 @@ results class of the other linear models.</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="dev/generated/statsmodels.stats.contrast.ContrastResults.summary_frame.html"
-                        title="previous chapter">statsmodels.stats.contrast.ContrastResults.summary_frame</a></p>
+  <p class="topless"><a href="dev/testing.html"
+                        title="previous chapter">Testing on Build Machines</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="examples/notebooks/generated/ols.html"
-                        title="next chapter">Ordinary Least Squares</a></p>
+  <p class="topless"><a href="generated/statsmodels.regression.linear_model.OLS.html"
+                        title="next chapter">statsmodels.regression.linear_model.OLS</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -305,9 +335,6 @@ results class of the other linear models.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -316,7 +343,7 @@ results class of the other linear models.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

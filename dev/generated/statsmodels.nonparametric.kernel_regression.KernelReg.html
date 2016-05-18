@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.nonparametric.kernel_regression.KernelReg &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.nonparametric.kernel_regression.KernelReg &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Nonparametric Methods nonparametric" href="../nonparametric.html" />
     <link rel="next" title="statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich" href="statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich.html" />
-    <link rel="prev" title="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.pdf" href="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.pdf.html" />
+    <link rel="prev" title="statsmodels.nonparametric.kernel_density.EstimatorSettings" href="statsmodels.nonparametric.kernel_density.EstimatorSettings.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -59,7 +59,7 @@
           <a href="statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich.html" title="statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.pdf.html" title="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.pdf"
+          <a href="statsmodels.nonparametric.kernel_density.EstimatorSettings.html" title="statsmodels.nonparametric.kernel_density.EstimatorSettings"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -160,10 +160,40 @@ Default is &#8216;cv_ls&#8217;.</p>
 <tr class="row-odd"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.fit.html#statsmodels.nonparametric.kernel_regression.KernelReg.fit" title="statsmodels.nonparametric.kernel_regression.KernelReg.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([data_predict])</td>
 <td>Returns the mean and marginal effects at the <cite>data_predict</cite> points.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.r_squared.html#statsmodels.nonparametric.kernel_regression.KernelReg.r_squared" title="statsmodels.nonparametric.kernel_regression.KernelReg.r_squared"><code class="xref py py-obj docutils literal"><span class="pre">r_squared</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.loo_likelihood.html#statsmodels.nonparametric.kernel_regression.KernelReg.loo_likelihood" title="statsmodels.nonparametric.kernel_regression.KernelReg.loo_likelihood"><code class="xref py py-obj docutils literal"><span class="pre">loo_likelihood</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.r_squared.html#statsmodels.nonparametric.kernel_regression.KernelReg.r_squared" title="statsmodels.nonparametric.kernel_regression.KernelReg.r_squared"><code class="xref py py-obj docutils literal"><span class="pre">r_squared</span></code></a>()</td>
 <td>Returns the R-Squared for the nonparametric regression.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.sig_test.html#statsmodels.nonparametric.kernel_regression.KernelReg.sig_test" title="statsmodels.nonparametric.kernel_regression.KernelReg.sig_test"><code class="xref py py-obj docutils literal"><span class="pre">sig_test</span></code></a>(var_pos[,&nbsp;nboot,&nbsp;nested_res,&nbsp;pivot])</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.sig_test.html#statsmodels.nonparametric.kernel_regression.KernelReg.sig_test" title="statsmodels.nonparametric.kernel_regression.KernelReg.sig_test"><code class="xref py py-obj docutils literal"><span class="pre">sig_test</span></code></a>(var_pos[,&nbsp;nboot,&nbsp;nested_res,&nbsp;pivot])</td>
+<td>Significance test for the variables in the regression.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich.html#statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich" title="statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich"><code class="xref py py-obj docutils literal"><span class="pre">aic_hurvich</span></code></a>(bw[,&nbsp;func])</td>
+<td>Computes the AIC Hurvich criteria for the estimation of the bandwidth.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.cv_loo.html#statsmodels.nonparametric.kernel_regression.KernelReg.cv_loo" title="statsmodels.nonparametric.kernel_regression.KernelReg.cv_loo"><code class="xref py py-obj docutils literal"><span class="pre">cv_loo</span></code></a>(bw,&nbsp;func)</td>
+<td>The cross-validation function with leave-one-out estimator.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.fit.html#statsmodels.nonparametric.kernel_regression.KernelReg.fit" title="statsmodels.nonparametric.kernel_regression.KernelReg.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([data_predict])</td>
+<td>Returns the mean and marginal effects at the <cite>data_predict</cite> points.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.loo_likelihood.html#statsmodels.nonparametric.kernel_regression.KernelReg.loo_likelihood" title="statsmodels.nonparametric.kernel_regression.KernelReg.loo_likelihood"><code class="xref py py-obj docutils literal"><span class="pre">loo_likelihood</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.r_squared.html#statsmodels.nonparametric.kernel_regression.KernelReg.r_squared" title="statsmodels.nonparametric.kernel_regression.KernelReg.r_squared"><code class="xref py py-obj docutils literal"><span class="pre">r_squared</span></code></a>()</td>
+<td>Returns the R-Squared for the nonparametric regression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.nonparametric.kernel_regression.KernelReg.sig_test.html#statsmodels.nonparametric.kernel_regression.KernelReg.sig_test" title="statsmodels.nonparametric.kernel_regression.KernelReg.sig_test"><code class="xref py py-obj docutils literal"><span class="pre">sig_test</span></code></a>(var_pos[,&nbsp;nboot,&nbsp;nested_res,&nbsp;pivot])</td>
 <td>Significance test for the variables in the regression.</td>
 </tr>
 </tbody>
@@ -182,8 +212,8 @@ Default is &#8216;cv_ls&#8217;.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.pdf.html"
-                        title="previous chapter">statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.pdf</a></p>
+  <p class="topless"><a href="statsmodels.nonparametric.kernel_density.EstimatorSettings.html"
+                        title="previous chapter">statsmodels.nonparametric.kernel_density.EstimatorSettings</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich.html"
                         title="next chapter">statsmodels.nonparametric.kernel_regression.KernelReg.aic_hurvich</a></p>
@@ -202,9 +232,6 @@ Default is &#8216;cv_ls&#8217;.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -213,7 +240,7 @@ Default is &#8216;cv_ls&#8217;.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

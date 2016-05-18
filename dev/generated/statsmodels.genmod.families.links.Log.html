@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.genmod.families.links.Log &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.genmod.families.links.Log &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,9 +26,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
-    <link rel="up" title="Generalized Estimating Equations" href="../gee.html" />
-    <link rel="next" title="statsmodels.genmod.families.links.Log.deriv" href="statsmodels.genmod.families.links.Log.deriv.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
+    <link rel="up" title="Generalized Linear Models" href="../glm.html" />
     <link rel="prev" title="statsmodels.genmod.families.links.CLogLog.inverse_deriv" href="statsmodels.genmod.families.links.CLogLog.inverse_deriv.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
@@ -56,9 +55,6 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="statsmodels.genmod.families.links.Log.deriv.html" title="statsmodels.genmod.families.links.Log.deriv"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
           <a href="statsmodels.genmod.families.links.CLogLog.inverse_deriv.html" title="statsmodels.genmod.families.links.CLogLog.inverse_deriv"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
@@ -68,7 +64,7 @@
 <li><a href="../examples/index.html">Examples</a></li> &nbsp;|&nbsp;
 <li><a href="../faq.html">FAQ</a></li> &nbsp;|&nbsp;
 
-          <li class="nav-item nav-item-1"><a href="../gee.html" accesskey="U">Generalized Estimating Equations</a> |</li> 
+          <li class="nav-item nav-item-1"><a href="../glm.html" accesskey="U">Generalized Linear Models</a> |</li> 
       </ul>
     </div>  
 
@@ -90,6 +86,30 @@
 <p class="rubric">Notes</p>
 <p>call and derivative call a private method _clean to trim the data by
 machine epsilon so that p is in (0,1). log is an alias of Log.</p>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(p,&nbsp;**extra)</td>
+<td>Log transform link function</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.links.Log.deriv.html#statsmodels.genmod.families.links.Log.deriv" title="statsmodels.genmod.families.links.Log.deriv"><code class="xref py py-obj docutils literal"><span class="pre">deriv</span></code></a>(p)</td>
+<td>Derivative of log transform link function</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.links.Log.deriv2.html#statsmodels.genmod.families.links.Log.deriv2" title="statsmodels.genmod.families.links.Log.deriv2"><code class="xref py py-obj docutils literal"><span class="pre">deriv2</span></code></a>(p)</td>
+<td>Second derivative of the log transform link function</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.links.Log.inverse.html#statsmodels.genmod.families.links.Log.inverse" title="statsmodels.genmod.families.links.Log.inverse"><code class="xref py py-obj docutils literal"><span class="pre">inverse</span></code></a>(z)</td>
+<td>Inverse of log transform link function</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.links.Log.inverse_deriv.html#statsmodels.genmod.families.links.Log.inverse_deriv" title="statsmodels.genmod.families.links.Log.inverse_deriv"><code class="xref py py-obj docutils literal"><span class="pre">inverse_deriv</span></code></a>(z)</td>
+<td>Derivative of the inverse of the log transform link function</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -127,9 +147,6 @@ machine epsilon so that p is in (0,1). log is an alias of Log.</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="statsmodels.genmod.families.links.CLogLog.inverse_deriv.html"
                         title="previous chapter">statsmodels.genmod.families.links.CLogLog.inverse_deriv</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="statsmodels.genmod.families.links.Log.deriv.html"
-                        title="next chapter">statsmodels.genmod.families.links.Log.deriv</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -145,9 +162,6 @@ machine epsilon so that p is in (0,1). log is an alias of Log.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -156,7 +170,7 @@ machine epsilon so that p is in (0,1). log is an alias of Log.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

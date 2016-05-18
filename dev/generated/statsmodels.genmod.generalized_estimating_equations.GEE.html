@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.genmod.generalized_estimating_equations.GEE &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.genmod.generalized_estimating_equations.GEE &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Generalized Estimating Equations" href="../gee.html" />
-    <link rel="next" title="statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list" href="statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list.html" />
-    <link rel="prev" title="statsmodels.genmod.families.links.probit.inverse_deriv" href="statsmodels.genmod.families.links.probit.inverse_deriv.html" />
+    <link rel="prev" title="Generalized Estimating Equations" href="../gee.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -56,10 +55,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list.html" title="statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="statsmodels.genmod.families.links.probit.inverse_deriv.html" title="statsmodels.genmod.families.links.probit.inverse_deriv"
+          <a href="../gee.html" title="Generalized Estimating Equations"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -175,17 +171,17 @@ If &#8216;raise&#8217;, an error is raised. Default is &#8216;none.&#8217;</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><code class="xref py py-obj docutils literal"><span class="pre">statsmodels.genmod.families.family</span></code>, <a class="reference internal" href="../glm.html#families"><span>Families</span></a>, <a class="reference internal" href="../glm.html#links"><span>Link Functions</span></a></p>
+<p class="last"><code class="xref py py-obj docutils literal"><span class="pre">statsmodels.genmod.families.family</span></code>, <a class="reference internal" href="../glm.html#families"><span class="std std-ref">Families</span></a>, <a class="reference internal" href="../glm.html#links"><span class="std std-ref">Link Functions</span></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>Only the following combinations make sense for family and link</p>
-<div class="highlight-python"><div class="highlight"><pre>             + ident log logit probit cloglog pow opow nbinom loglog logc
-Gaussian     |   x    x                        x
-inv Gaussian |   x    x                        x
-binomial     |   x    x    x     x       x     x    x           x      x
-Poission     |   x    x                        x
-neg binomial |   x    x                        x          x
-gamma        |   x    x                        x
+<div class="highlight-default"><div class="highlight"><pre><span></span>             <span class="o">+</span> <span class="n">ident</span> <span class="n">log</span> <span class="n">logit</span> <span class="n">probit</span> <span class="n">cloglog</span> <span class="nb">pow</span> <span class="n">opow</span> <span class="n">nbinom</span> <span class="n">loglog</span> <span class="n">logc</span>
+<span class="n">Gaussian</span>     <span class="o">|</span>   <span class="n">x</span>    <span class="n">x</span>                        <span class="n">x</span>
+<span class="n">inv</span> <span class="n">Gaussian</span> <span class="o">|</span>   <span class="n">x</span>    <span class="n">x</span>                        <span class="n">x</span>
+<span class="n">binomial</span>     <span class="o">|</span>   <span class="n">x</span>    <span class="n">x</span>    <span class="n">x</span>     <span class="n">x</span>       <span class="n">x</span>     <span class="n">x</span>    <span class="n">x</span>           <span class="n">x</span>      <span class="n">x</span>
+<span class="n">Poission</span>     <span class="o">|</span>   <span class="n">x</span>    <span class="n">x</span>                        <span class="n">x</span>
+<span class="n">neg</span> <span class="n">binomial</span> <span class="o">|</span>   <span class="n">x</span>    <span class="n">x</span>                        <span class="n">x</span>          <span class="n">x</span>
+<span class="n">gamma</span>        <span class="o">|</span>   <span class="n">x</span>    <span class="n">x</span>                        <span class="n">x</span>
 </pre></div>
 </div>
 <p>Not all of these link functions are currently available.</p>
@@ -205,36 +201,95 @@ standard errors reported in Stata, multiply by sqrt(N / (N - g)),
 where N is the total sample size, and g is the average group size.</p>
 <p class="rubric">Examples</p>
 <p>Logistic regression with autoregressive working dependence:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">family</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">families</span><span class="o">.</span><span class="n">Binomial</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">va</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">cov_struct</span><span class="o">.</span><span class="n">Autoregressive</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GEE</span><span class="p">(</span><span class="n">endog</span><span class="p">,</span> <span class="n">exog</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="n">family</span><span class="p">,</span> <span class="n">cov_struct</span><span class="o">=</span><span class="n">va</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Use formulas to fit a Poisson GLM with independent working
 dependence:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fam</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">families</span><span class="o">.</span><span class="n">Poisson</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ind</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">cov_struct</span><span class="o">.</span><span class="n">Independence</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GEE</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="s">&quot;y ~ age + trt + base&quot;</span><span class="p">,</span> <span class="s">&quot;subject&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GEE</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="s2">&quot;y ~ age + trt + base&quot;</span><span class="p">,</span> <span class="s2">&quot;subject&quot;</span><span class="p">,</span>
 <span class="go">                             data, cov_struct=ind, family=fam)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Equivalent, using the formula API:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">as</span> <span class="nn">smf</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fam</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">families</span><span class="o">.</span><span class="n">Poisson</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ind</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">cov_struct</span><span class="o">.</span><span class="n">Independence</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">gee</span><span class="p">(</span><span class="s">&quot;y ~ age + trt + base&quot;</span><span class="p">,</span> <span class="s">&quot;subject&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">gee</span><span class="p">(</span><span class="s2">&quot;y ~ age + trt + base&quot;</span><span class="p">,</span> <span class="s2">&quot;subject&quot;</span><span class="p">,</span>
 <span class="go">                data, cov_struct=ind, family=fam)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">result</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">endog_names</span></code></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">exog_names</span></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="55%" />
+<col width="45%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>cached_means</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list.html#statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list" title="statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list"><code class="xref py py-obj docutils literal"><span class="pre">cluster_list</span></code></a>(array)</td>
+<td>Returns <cite>array</cite> split into subarrays corresponding to the cluster structure.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.generalized_estimating_equations.GEE.estimate_scale.html#statsmodels.genmod.generalized_estimating_equations.GEE.estimate_scale" title="statsmodels.genmod.generalized_estimating_equations.GEE.estimate_scale"><code class="xref py py-obj docutils literal"><span class="pre">estimate_scale</span></code></a>()</td>
+<td>Returns an estimate of the scale parameter at the current parameter value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.generalized_estimating_equations.GEE.fit.html#statsmodels.genmod.generalized_estimating_equations.GEE.fit" title="statsmodels.genmod.generalized_estimating_equations.GEE.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([maxiter,&nbsp;ctol,&nbsp;start_params,&nbsp;...])</td>
+<td>Fits a marginal regression model using generalized estimating equations (GEE).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.generalized_estimating_equations.GEE.from_formula.html#statsmodels.genmod.generalized_estimating_equations.GEE.from_formula" title="statsmodels.genmod.generalized_estimating_equations.GEE.from_formula"><code class="xref py py-obj docutils literal"><span class="pre">from_formula</span></code></a>(formula,&nbsp;groups,&nbsp;data[,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.generalized_estimating_equations.GEE.mean_deriv.html#statsmodels.genmod.generalized_estimating_equations.GEE.mean_deriv" title="statsmodels.genmod.generalized_estimating_equations.GEE.mean_deriv"><code class="xref py py-obj docutils literal"><span class="pre">mean_deriv</span></code></a>(exog,&nbsp;lin_pred)</td>
+<td>Derivative of the expected endog with respect to the parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.generalized_estimating_equations.GEE.mean_deriv_exog.html#statsmodels.genmod.generalized_estimating_equations.GEE.mean_deriv_exog" title="statsmodels.genmod.generalized_estimating_equations.GEE.mean_deriv_exog"><code class="xref py py-obj docutils literal"><span class="pre">mean_deriv_exog</span></code></a>(exog,&nbsp;params[,&nbsp;offset_exposure])</td>
+<td>Derivative of the expected endog with respect to exog.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.generalized_estimating_equations.GEE.predict.html#statsmodels.genmod.generalized_estimating_equations.GEE.predict" title="statsmodels.genmod.generalized_estimating_equations.GEE.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(params[,&nbsp;exog,&nbsp;offset,&nbsp;exposure,&nbsp;linear])</td>
+<td>Return predicted values for a marginal regression model fit using GEE.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.generalized_estimating_equations.GEE.update_cached_means.html#statsmodels.genmod.generalized_estimating_equations.GEE.update_cached_means" title="statsmodels.genmod.generalized_estimating_equations.GEE.update_cached_means"><code class="xref py py-obj docutils literal"><span class="pre">update_cached_means</span></code></a>(mean_params)</td>
+<td>cached_means should always contain the most recent calculation</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -300,11 +355,8 @@ dependence:</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.genmod.families.links.probit.inverse_deriv.html"
-                        title="previous chapter">statsmodels.genmod.families.links.probit.inverse_deriv</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list.html"
-                        title="next chapter">statsmodels.genmod.generalized_estimating_equations.GEE.cluster_list</a></p>
+  <p class="topless"><a href="../gee.html"
+                        title="previous chapter">Generalized Estimating Equations</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -320,9 +372,6 @@ dependence:</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -331,7 +380,7 @@ dependence:</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

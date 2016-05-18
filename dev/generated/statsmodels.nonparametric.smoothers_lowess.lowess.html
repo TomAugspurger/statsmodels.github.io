@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.nonparametric.smoothers_lowess.lowess &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.nonparametric.smoothers_lowess.lowess &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Nonparametric Methods nonparametric" href="../nonparametric.html" />
     <link rel="next" title="statsmodels.nonparametric.kde.KDEUnivariate" href="statsmodels.nonparametric.kde.KDEUnivariate.html" />
-    <link rel="prev" title="statsmodels.nonparametric.bandwidths.select_bandwidth" href="statsmodels.nonparametric.bandwidths.select_bandwidth.html" />
+    <link rel="prev" title="Nonparametric Methods nonparametric" href="../nonparametric.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -59,7 +59,7 @@
           <a href="statsmodels.nonparametric.kde.KDEUnivariate.html" title="statsmodels.nonparametric.kde.KDEUnivariate"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="statsmodels.nonparametric.bandwidths.select_bandwidth.html" title="statsmodels.nonparametric.bandwidths.select_bandwidth"
+          <a href="../nonparametric.html" title="Nonparametric Methods nonparametric"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -186,8 +186,8 @@ Association 74 (368): 829-836.</p>
 <p class="rubric">Examples</p>
 <p>The below allows a comparison between how different the fits from
 lowess for different values of frac can be.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lowess</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">nonparametric</span><span class="o">.</span><span class="n">lowess</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -196,9 +196,9 @@ lowess for different values of frac can be.</p>
 </pre></div>
 </div>
 <p>This gives a similar comparison for when it is 0 vs not.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="kn">as</span> <span class="nn">stats</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lowess</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">nonparametric</span><span class="o">.</span><span class="n">lowess</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">stats</span><span class="o">.</span><span class="n">cauchy</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -220,8 +220,8 @@ lowess for different values of frac can be.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.nonparametric.bandwidths.select_bandwidth.html"
-                        title="previous chapter">statsmodels.nonparametric.bandwidths.select_bandwidth</a></p>
+  <p class="topless"><a href="../nonparametric.html"
+                        title="previous chapter">Nonparametric Methods <code class="docutils literal"><span class="pre">nonparametric</span></code></a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="statsmodels.nonparametric.kde.KDEUnivariate.html"
                         title="next chapter">statsmodels.nonparametric.kde.KDEUnivariate</a></p>
@@ -240,9 +240,6 @@ lowess for different values of frac can be.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -251,7 +248,7 @@ lowess for different values of frac can be.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

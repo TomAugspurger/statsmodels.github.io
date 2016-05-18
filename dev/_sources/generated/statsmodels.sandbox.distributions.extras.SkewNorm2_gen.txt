@@ -88,4 +88,10 @@ statsmodels.sandbox.distributions.extras.SkewNorm2_gen
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~SkewNorm2_gen.random_state
+   
    

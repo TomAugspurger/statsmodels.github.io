@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.regression.linear_model.GLS &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.regression.linear_model.GLS &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,9 +26,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Linear Regression" href="../regression.html" />
-    <link rel="next" title="statsmodels.regression.linear_model.GLS.fit" href="statsmodels.regression.linear_model.GLS.fit.html" />
     <link rel="prev" title="statsmodels.regression.linear_model.OLS.whiten" href="statsmodels.regression.linear_model.OLS.whiten.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
@@ -55,9 +54,6 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="statsmodels.regression.linear_model.GLS.fit.html" title="statsmodels.regression.linear_model.GLS.fit"
-             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="statsmodels.regression.linear_model.OLS.whiten.html" title="statsmodels.regression.linear_model.OLS.whiten"
              accesskey="P">previous</a> |</li>
@@ -179,8 +175,8 @@ of freedom.</p>
 <p>If sigma is a function of the data making one of the regressors
 a constant, then the current postestimation statistics will not be correct.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">longley</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">exog</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">exog</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ols_resid</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">endog</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">exog</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">resid</span>
@@ -191,18 +187,39 @@ a constant, then the current postestimation statistics will not be correct.</p>
 <p><cite>rho</cite> is a consistent estimator of the correlation of the residuals from
 an OLS fit of the longley data.  It is assumed that this is the true rho
 of the AR process data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">toeplitz</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="k">import</span> <span class="n">toeplitz</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">order</span> <span class="o">=</span> <span class="n">toeplitz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="n">rho</span><span class="o">**</span><span class="n">order</span>
 </pre></div>
 </div>
 <p><cite>sigma</cite> is an n x n matrix of the autocorrelation structure of the
 data.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gls_model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GLS</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">endog</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">exog</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gls_model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">GLS</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">endog</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">exog</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gls_results</span> <span class="o">=</span> <span class="n">gls_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">gls_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">gls_results</span><span class="o">.</span><span class="n">summary</span><span class="p">()))</span>
 </pre></div>
 </div>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">df_model</span></code></td>
+<td>The model degree of freedom, defined as the rank of the regressor matrix minus 1 if a constant is included.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">df_resid</span></code></td>
+<td>The residual degree of freedom, defined as the number of observations minus the rank of the regressor matrix.</td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">endog_names</span></code></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">exog_names</span></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -213,8 +230,59 @@ data.</p>
 <tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.fit.html#statsmodels.regression.linear_model.GLS.fit" title="statsmodels.regression.linear_model.GLS.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([method,&nbsp;cov_type,&nbsp;cov_kwds,&nbsp;use_t])</td>
 <td>Full fit of the model.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.fit_regularized.html#statsmodels.regression.linear_model.GLS.fit_regularized" title="statsmodels.regression.linear_model.GLS.fit_regularized"><code class="xref py py-obj docutils literal"><span class="pre">fit_regularized</span></code></a>([method,&nbsp;maxiter,&nbsp;alpha,&nbsp;...])</td>
-<td>Return a regularized fit to a linear regression model.</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.from_formula.html#statsmodels.regression.linear_model.GLS.from_formula" title="statsmodels.regression.linear_model.GLS.from_formula"><code class="xref py py-obj docutils literal"><span class="pre">from_formula</span></code></a>(formula,&nbsp;data[,&nbsp;subset])</td>
+<td>Create a Model from a formula and dataframe.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.get_distribution.html#statsmodels.regression.linear_model.GLS.get_distribution" title="statsmodels.regression.linear_model.GLS.get_distribution"><code class="xref py py-obj docutils literal"><span class="pre">get_distribution</span></code></a>(params,&nbsp;scale[,&nbsp;exog,&nbsp;...])</td>
+<td>Returns a random number generator for the predictive distribution.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.hessian.html#statsmodels.regression.linear_model.GLS.hessian" title="statsmodels.regression.linear_model.GLS.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(params)</td>
+<td>The Hessian matrix of the model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.information.html#statsmodels.regression.linear_model.GLS.information" title="statsmodels.regression.linear_model.GLS.information"><code class="xref py py-obj docutils literal"><span class="pre">information</span></code></a>(params)</td>
+<td>Fisher information matrix of model</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.initialize.html#statsmodels.regression.linear_model.GLS.initialize" title="statsmodels.regression.linear_model.GLS.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.loglike.html#statsmodels.regression.linear_model.GLS.loglike" title="statsmodels.regression.linear_model.GLS.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(params)</td>
+<td>Returns the value of the Gaussian log-likelihood function at params.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.predict.html#statsmodels.regression.linear_model.GLS.predict" title="statsmodels.regression.linear_model.GLS.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(params[,&nbsp;exog])</td>
+<td>Return linear predicted values from a design matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.score.html#statsmodels.regression.linear_model.GLS.score" title="statsmodels.regression.linear_model.GLS.score"><code class="xref py py-obj docutils literal"><span class="pre">score</span></code></a>(params)</td>
+<td>Score vector of model.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.whiten.html#statsmodels.regression.linear_model.GLS.whiten" title="statsmodels.regression.linear_model.GLS.whiten"><code class="xref py py-obj docutils literal"><span class="pre">whiten</span></code></a>(X)</td>
+<td>GLS whiten method.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.fit.html#statsmodels.regression.linear_model.GLS.fit" title="statsmodels.regression.linear_model.GLS.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([method,&nbsp;cov_type,&nbsp;cov_kwds,&nbsp;use_t])</td>
+<td>Full fit of the model.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">GLS.fit_regularized</span></code></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.from_formula.html#statsmodels.regression.linear_model.GLS.from_formula" title="statsmodels.regression.linear_model.GLS.from_formula"><code class="xref py py-obj docutils literal"><span class="pre">from_formula</span></code></a>(formula,&nbsp;data[,&nbsp;subset])</td>
+<td>Create a Model from a formula and dataframe.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.get_distribution.html#statsmodels.regression.linear_model.GLS.get_distribution" title="statsmodels.regression.linear_model.GLS.get_distribution"><code class="xref py py-obj docutils literal"><span class="pre">get_distribution</span></code></a>(params,&nbsp;scale[,&nbsp;exog,&nbsp;...])</td>
+<td>Returns a random number generator for the predictive distribution.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.hessian.html#statsmodels.regression.linear_model.GLS.hessian" title="statsmodels.regression.linear_model.GLS.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(params)</td>
+<td>The Hessian matrix of the model</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.information.html#statsmodels.regression.linear_model.GLS.information" title="statsmodels.regression.linear_model.GLS.information"><code class="xref py py-obj docutils literal"><span class="pre">information</span></code></a>(params)</td>
+<td>Fisher information matrix of model</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.initialize.html#statsmodels.regression.linear_model.GLS.initialize" title="statsmodels.regression.linear_model.GLS.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>()</td>
 <td></td>
@@ -225,7 +293,10 @@ data.</p>
 <tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.predict.html#statsmodels.regression.linear_model.GLS.predict" title="statsmodels.regression.linear_model.GLS.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(params[,&nbsp;exog])</td>
 <td>Return linear predicted values from a design matrix.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.whiten.html#statsmodels.regression.linear_model.GLS.whiten" title="statsmodels.regression.linear_model.GLS.whiten"><code class="xref py py-obj docutils literal"><span class="pre">whiten</span></code></a>(X)</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.score.html#statsmodels.regression.linear_model.GLS.score" title="statsmodels.regression.linear_model.GLS.score"><code class="xref py py-obj docutils literal"><span class="pre">score</span></code></a>(params)</td>
+<td>Score vector of model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.regression.linear_model.GLS.whiten.html#statsmodels.regression.linear_model.GLS.whiten" title="statsmodels.regression.linear_model.GLS.whiten"><code class="xref py py-obj docutils literal"><span class="pre">whiten</span></code></a>(X)</td>
 <td>GLS whiten method.</td>
 </tr>
 </tbody>
@@ -267,9 +338,6 @@ data.</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="statsmodels.regression.linear_model.OLS.whiten.html"
                         title="previous chapter">statsmodels.regression.linear_model.OLS.whiten</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="statsmodels.regression.linear_model.GLS.fit.html"
-                        title="next chapter">statsmodels.regression.linear_model.GLS.fit</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -285,9 +353,6 @@ data.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -296,7 +361,7 @@ data.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

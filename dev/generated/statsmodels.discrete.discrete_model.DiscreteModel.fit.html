@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.discrete.discrete_model.DiscreteModel.fit &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.discrete.discrete_model.DiscreteModel.fit &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="statsmodels.discrete.discrete_model.DiscreteModel" href="statsmodels.discrete.discrete_model.DiscreteModel.html" />
     <link rel="next" title="statsmodels.discrete.discrete_model.DiscreteModel.fit_regularized" href="statsmodels.discrete.discrete_model.DiscreteModel.fit_regularized.html" />
     <link rel="prev" title="statsmodels.discrete.discrete_model.DiscreteModel.cov_params_func_l1" href="statsmodels.discrete.discrete_model.DiscreteModel.cov_params_func_l1.html" />
@@ -160,9 +160,9 @@ hessian in the optimization (currently only with <cite>&#8220;newton&#8221;</cit
 <blockquote class="last">
 <div><p>All kwargs are passed to the chosen solver with one exception. The
 following keyword controls what happens after the fit:</p>
-<div class="highlight-python"><div class="highlight"><pre>warn_convergence : bool, optional
-    If True, checks the model for the converged flag. If the
-    converged flag is False, a ConvergenceWarning is issued.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">warn_convergence</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">optional</span>
+    <span class="n">If</span> <span class="kc">True</span><span class="p">,</span> <span class="n">checks</span> <span class="n">the</span> <span class="n">model</span> <span class="k">for</span> <span class="n">the</span> <span class="n">converged</span> <span class="n">flag</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span>
+    <span class="n">converged</span> <span class="n">flag</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">,</span> <span class="n">a</span> <span class="n">ConvergenceWarning</span> <span class="ow">is</span> <span class="n">issued</span><span class="o">.</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -174,7 +174,7 @@ following keyword controls what happens after the fit:</p>
 <p>The &#8216;basinhopping&#8217; solver ignores <cite>maxiter</cite>, <cite>retall</cite>, <cite>full_output</cite>
 explicit arguments.</p>
 <p>Optional arguments for solvers (see returned Results.mle_settings):</p>
-<div class="highlight-python"><div class="highlight"><pre>&#39;newton&#39;
+<div class="highlight-default"><div class="highlight"><pre><span></span>&#39;newton&#39;
     tol : float
         Relative error in params acceptable for convergence.
 &#39;nm&#39; -- Nelder Mead
@@ -301,9 +301,6 @@ explicit arguments.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -312,7 +309,7 @@ explicit arguments.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

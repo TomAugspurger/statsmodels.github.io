@@ -88,4 +88,10 @@ statsmodels.sandbox.distributions.transformed.TransfTwo_gen
 
    
    
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~TransfTwo_gen.random_state
+   
    

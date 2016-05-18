@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.base.model.GenericLikelihoodModelResults.wald_test_terms &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.base.model.GenericLikelihoodModelResults.wald_test_terms &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../../index.html" />
     <link rel="up" title="statsmodels.base.model.GenericLikelihoodModelResults" href="statsmodels.base.model.GenericLikelihoodModelResults.html" />
     <link rel="next" title="statsmodels.stats.contrast.ContrastResults" href="statsmodels.stats.contrast.ContrastResults.html" />
     <link rel="prev" title="statsmodels.base.model.GenericLikelihoodModelResults.wald_test" href="statsmodels.base.model.GenericLikelihoodModelResults.wald_test.html" />
@@ -68,8 +68,9 @@
 <li><a href="../../examples/index.html">Examples</a></li> &nbsp;|&nbsp;
 <li><a href="../../faq.html">FAQ</a></li> &nbsp;|&nbsp;
 
-          <li class="nav-item nav-item-1"><a href="../internal.html" >Internal Classes</a> |</li>
-          <li class="nav-item nav-item-2"><a href="statsmodels.base.model.GenericLikelihoodModelResults.html" accesskey="U">statsmodels.base.model.GenericLikelihoodModelResults</a> |</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Developer Page</a> |</li>
+          <li class="nav-item nav-item-2"><a href="../internal.html" >Internal Classes</a> |</li>
+          <li class="nav-item nav-item-3"><a href="statsmodels.base.model.GenericLikelihoodModelResults.html" accesskey="U">statsmodels.base.model.GenericLikelihoodModelResults</a> |</li> 
       </ul>
     </div>  
 
@@ -124,7 +125,7 @@ pvalues.</p>
 </tbody>
 </table>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">res_ols</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s">&quot;np.log(Days+1) ~ C(Duration, Sum)*C(Weight, Sum)&quot;</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res_ols</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s2">&quot;np.log(Days+1) ~ C(Duration, Sum)*C(Weight, Sum)&quot;</span><span class="p">,</span>
 <span class="go">                  data).fit()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">res_ols</span><span class="o">.</span><span class="n">wald_test_terms</span><span class="p">()</span>
 <span class="go">&lt;class &#39;statsmodels.stats.contrast.WaldTestResults&#39;&gt;</span>
@@ -135,11 +136,11 @@ pvalues.</p>
 <span class="go">C(Duration, Sum):C(Weight, Sum)    0.176002      0.83912310946              2        51</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">res_poi</span> <span class="o">=</span> <span class="n">Poisson</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="s">&quot;Days ~ C(Weight) * C(Duration)&quot;</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res_poi</span> <span class="o">=</span> <span class="n">Poisson</span><span class="o">.</span><span class="n">from_formula</span><span class="p">(</span><span class="s2">&quot;Days ~ C(Weight) * C(Duration)&quot;</span><span class="p">,</span>
 <span class="go">                                   data).fit(cov_type=&#39;HC0&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">wt</span> <span class="o">=</span> <span class="n">res_poi</span><span class="o">.</span><span class="n">wald_test_terms</span><span class="p">(</span><span class="n">skip_single</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wt</span> <span class="o">=</span> <span class="n">res_poi</span><span class="o">.</span><span class="n">wald_test_terms</span><span class="p">(</span><span class="n">skip_single</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="go">                                 combine_terms=[&#39;Duration&#39;, &#39;Weight&#39;])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">wt</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">wt</span><span class="p">)</span>
 <span class="go">                            chi2             P&gt;chi2  df constraint</span>
 <span class="go">Intercept              15.695625  7.43960374424e-05              1</span>
 <span class="go">C(Weight)              16.132616  0.000313940174705              2</span>
@@ -183,9 +184,6 @@ pvalues.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -194,7 +192,7 @@ pvalues.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

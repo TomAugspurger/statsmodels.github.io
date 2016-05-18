@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.tsa.statespace.representation.Representation &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.tsa.statespace.representation.Representation &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Time Series Analysis by State Space Methods statespace" href="../statespace.html" />
     <link rel="next" title="statsmodels.tsa.statespace.representation.Representation.bind" href="statsmodels.tsa.statespace.representation.Representation.bind.html" />
-    <link rel="prev" title="statsmodels.tsa.statespace.mlemodel.MLEResults.zvalues" href="statsmodels.tsa.statespace.mlemodel.MLEResults.zvalues.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -58,9 +57,6 @@
         <li class="right" >
           <a href="statsmodels.tsa.statespace.representation.Representation.bind.html" title="statsmodels.tsa.statespace.representation.Representation.bind"
              accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="statsmodels.tsa.statespace.mlemodel.MLEResults.zvalues.html" title="statsmodels.tsa.statespace.mlemodel.MLEResults.zvalues"
-             accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
 <li><a href="https://github.com/statsmodels/statsmodels/issues">Bugs</a></li> &nbsp;|&nbsp;
@@ -184,13 +180,13 @@ passed.</p>
 <p class="rubric">Notes</p>
 <p>A general state space model is of the form</p>
 <div class="math">
-<p><img src="../_images/math/20ada0b6996235b96c62275e7bc00980a002c4a1.png" alt="y_t &amp; = Z_t \alpha_t + d_t + \varepsilon_t \\
+<p><img src="../_images/math/28f6b4ecb9558aa1f52757ae6c911984b784a48d.png" alt="y_t &amp; = Z_t \alpha_t + d_t + \varepsilon_t \\
 \alpha_t &amp; = T_t \alpha_{t-1} + c_t + R_t \eta_t \\"/></p>
 </div><p>where <img class="math" src="../_images/math/081514a08523d4515910f65638896f0da2b6d434.png" alt="y_t" style="vertical-align: -4px"/> refers to the observation vector at time <img class="math" src="../_images/math/1c830742422ece3ed035f2cb703543f1e53245f2.png" alt="t" style="vertical-align: 0px"/>,
 <img class="math" src="../_images/math/dc03d033b97434e247a76f16e9d0366a05b199dd.png" alt="\alpha_t" style="vertical-align: -3px"/> refers to the (unobserved) state vector at time
 <img class="math" src="../_images/math/1c830742422ece3ed035f2cb703543f1e53245f2.png" alt="t" style="vertical-align: 0px"/>, and where the irregular components are defined as</p>
 <div class="math">
-<p><img src="../_images/math/d49a3514b6c510f357f63a139a3d50ac2bffcebd.png" alt="\varepsilon_t \sim N(0, H_t) \\
+<p><img src="../_images/math/babd8805a394ea2b81a7324e588ccba3fba931ce.png" alt="\varepsilon_t \sim N(0, H_t) \\
 \eta_t \sim N(0, Q_t) \\"/></p>
 </div><p>The remaining variables (<img class="math" src="../_images/math/ee06ae40c116b928b4b2a71767ac26dc89183b98.png" alt="Z_t, d_t, H_t, T_t, c_t, R_t, Q_t" style="vertical-align: -4px"/>) in the
 equations are matrices describing the process. Their variable names and
@@ -206,10 +202,10 @@ dimensions are as follows</p>
 example, <img class="math" src="../_images/math/239a1c54c81ee76bf7ef3d5137d701cfbcbbe630.png" alt="Z_t = Z_{t+1} ~ \forall ~ t" style="vertical-align: -5px"/>), its last dimension may
 be of size <img class="math" src="../_images/math/2176dbf491b1640d3e13825ce5571de922e61a33.png" alt="1" style="vertical-align: -1px"/> rather than size <cite>nobs</cite>.</p>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r27" rules="none">
+<table class="docutils citation" frame="void" id="r20" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[R27]</a></td><td>Durbin, James, and Siem Jan Koopman. 2012.
+<tr><td class="label"><a class="fn-backref" href="#id1">[R20]</a></td><td>Durbin, James, and Siem Jan Koopman. 2012.
 Time Series Analysis by State Space Methods: Second Edition.
 Oxford University Press.</td></tr>
 </tbody>
@@ -241,6 +237,27 @@ Oxford University Press.</td></tr>
 </tr>
 <tr class="row-odd"><td>initial_variance</td>
 <td>(float) Initial variance for approximate diffuse initialization. Default is 1e6.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.representation.Representation.bind.html#statsmodels.tsa.statespace.representation.Representation.bind" title="statsmodels.tsa.statespace.representation.Representation.bind"><code class="xref py py-obj docutils literal"><span class="pre">bind</span></code></a>(endog)</td>
+<td>Bind data to the statespace representation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.representation.Representation.initialize_approximate_diffuse.html#statsmodels.tsa.statespace.representation.Representation.initialize_approximate_diffuse" title="statsmodels.tsa.statespace.representation.Representation.initialize_approximate_diffuse"><code class="xref py py-obj docutils literal"><span class="pre">initialize_approximate_diffuse</span></code></a>([variance])</td>
+<td>Initialize the statespace model with approximate diffuse values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.representation.Representation.initialize_known.html#statsmodels.tsa.statespace.representation.Representation.initialize_known" title="statsmodels.tsa.statespace.representation.Representation.initialize_known"><code class="xref py py-obj docutils literal"><span class="pre">initialize_known</span></code></a>(initial_state,&nbsp;...)</td>
+<td>Initialize the statespace model with known distribution for initial state.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.representation.Representation.initialize_stationary.html#statsmodels.tsa.statespace.representation.Representation.initialize_stationary" title="statsmodels.tsa.statespace.representation.Representation.initialize_stationary"><code class="xref py py-obj docutils literal"><span class="pre">initialize_stationary</span></code></a>()</td>
+<td>Initialize the statespace model as stationary.</td>
 </tr>
 </tbody>
 </table>
@@ -323,9 +340,6 @@ Oxford University Press.</td></tr>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.tsa.statespace.mlemodel.MLEResults.zvalues.html"
-                        title="previous chapter">statsmodels.tsa.statespace.mlemodel.MLEResults.zvalues</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="statsmodels.tsa.statespace.representation.Representation.bind.html"
                         title="next chapter">statsmodels.tsa.statespace.representation.Representation.bind</a></p>
@@ -344,9 +358,6 @@ Oxford University Press.</td></tr>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -355,7 +366,7 @@ Oxford University Press.</td></tr>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.tsa.arima_model.ARIMA &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.tsa.arima_model.ARIMA &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Time Series analysis tsa" href="../tsa.html" />
-    <link rel="next" title="statsmodels.tsa.arima_model.ARIMA.fit" href="statsmodels.tsa.arima_model.ARIMA.fit.html" />
-    <link rel="prev" title="statsmodels.tsa.arima_model.ARMAResults.summary2" href="statsmodels.tsa.arima_model.ARMAResults.summary2.html" />
+    <link rel="prev" title="statsmodels.tsa.arima_model.ARMAResults.wald_test_terms" href="statsmodels.tsa.arima_model.ARMAResults.wald_test_terms.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -56,10 +55,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="statsmodels.tsa.arima_model.ARIMA.fit.html" title="statsmodels.tsa.arima_model.ARIMA.fit"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="statsmodels.tsa.arima_model.ARMAResults.summary2.html" title="statsmodels.tsa.arima_model.ARMAResults.summary2"
+          <a href="statsmodels.tsa.arima_model.ARMAResults.wald_test_terms.html" title="statsmodels.tsa.arima_model.ARMAResults.wald_test_terms"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -122,7 +118,7 @@ for endog or exog, it is assumed to have a DateIndex.</p>
 <p class="rubric">Notes</p>
 <p>If exogenous variables are given, then the model that is fit is</p>
 <div class="math">
-<p><img src="../_images/math/be28642cf99956daa7176f9ab59ba2438d1c92a1.png" alt="\phi(L)(y_t - X_t\beta) = \theta(L)\epsilon_t"/></p>
+<p><img src="../_images/math/8eadca4901ba6b167bf1dccd04675fc6f1b3116f.png" alt="\phi(L)(y_t - X_t\beta) = \theta(L)\epsilon_t"/></p>
 </div><p>where <img class="math" src="../_images/math/31474b06c59f21db91bcb3c8a425561a2e44a583.png" alt="\phi" style="vertical-align: -4px"/> and <img class="math" src="../_images/math/1a9b85a9218a3358278a57e3f68189b5176af0fc.png" alt="\theta" style="vertical-align: 0px"/> are polynomials in the lag
 operator, <img class="math" src="../_images/math/d4cb4cb97b65f55811d2f06e045948b77f3e81c5.png" alt="L" style="vertical-align: 0px"/>. This is the regression model with ARMA errors,
 or ARMAX model. This specification is used, whether or not the model
@@ -131,6 +127,21 @@ the <cite>method</cite> argument in
 <a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.fit.html#statsmodels.tsa.arima_model.ARIMA.fit" title="statsmodels.tsa.arima_model.ARIMA.fit"><code class="xref py py-meth docutils literal"><span class="pre">statsmodels.tsa.arima_model.ARIMA.fit</span></code></a>. Therefore, for
 now, <cite>css</cite> and <cite>mle</cite> refer to estimation methods only. This may
 change for the case of the <cite>css</cite> model in future versions.</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">endog_names</span></code></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">exog_names</span></code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -141,25 +152,76 @@ change for the case of the <cite>css</cite> model in future versions.</p>
 <tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.fit.html#statsmodels.tsa.arima_model.ARIMA.fit" title="statsmodels.tsa.arima_model.ARIMA.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([start_params,&nbsp;trend,&nbsp;method,&nbsp;...])</td>
 <td>Fits ARIMA(p,d,q) model by exact maximum likelihood via Kalman filter.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.geterrors.html#statsmodels.tsa.arima_model.ARIMA.geterrors" title="statsmodels.tsa.arima_model.ARIMA.geterrors"><code class="xref py py-obj docutils literal"><span class="pre">geterrors</span></code></a>(params)</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.from_formula.html#statsmodels.tsa.arima_model.ARIMA.from_formula" title="statsmodels.tsa.arima_model.ARIMA.from_formula"><code class="xref py py-obj docutils literal"><span class="pre">from_formula</span></code></a>(formula,&nbsp;data[,&nbsp;subset])</td>
+<td>Create a Model from a formula and dataframe.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.geterrors.html#statsmodels.tsa.arima_model.ARIMA.geterrors" title="statsmodels.tsa.arima_model.ARIMA.geterrors"><code class="xref py py-obj docutils literal"><span class="pre">geterrors</span></code></a>(params)</td>
 <td>Get the errors of the ARMA process.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.hessian.html#statsmodels.tsa.arima_model.ARIMA.hessian" title="statsmodels.tsa.arima_model.ARIMA.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(params)</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.hessian.html#statsmodels.tsa.arima_model.ARIMA.hessian" title="statsmodels.tsa.arima_model.ARIMA.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(params)</td>
 <td>Compute the Hessian at params,</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike.html#statsmodels.tsa.arima_model.ARIMA.loglike" title="statsmodels.tsa.arima_model.ARIMA.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(params[,&nbsp;set_sigma2])</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.information.html#statsmodels.tsa.arima_model.ARIMA.information" title="statsmodels.tsa.arima_model.ARIMA.information"><code class="xref py py-obj docutils literal"><span class="pre">information</span></code></a>(params)</td>
+<td>Fisher information matrix of model</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.initialize.html#statsmodels.tsa.arima_model.ARIMA.initialize" title="statsmodels.tsa.arima_model.ARIMA.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>()</td>
+<td>Initialize (possibly re-initialize) a Model instance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike.html#statsmodels.tsa.arima_model.ARIMA.loglike" title="statsmodels.tsa.arima_model.ARIMA.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(params[,&nbsp;set_sigma2])</td>
 <td>Compute the log-likelihood for ARMA(p,q) model</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike_css.html#statsmodels.tsa.arima_model.ARIMA.loglike_css" title="statsmodels.tsa.arima_model.ARIMA.loglike_css"><code class="xref py py-obj docutils literal"><span class="pre">loglike_css</span></code></a>(params[,&nbsp;set_sigma2])</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike_css.html#statsmodels.tsa.arima_model.ARIMA.loglike_css" title="statsmodels.tsa.arima_model.ARIMA.loglike_css"><code class="xref py py-obj docutils literal"><span class="pre">loglike_css</span></code></a>(params[,&nbsp;set_sigma2])</td>
 <td>Conditional Sum of Squares likelihood function.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike_kalman.html#statsmodels.tsa.arima_model.ARIMA.loglike_kalman" title="statsmodels.tsa.arima_model.ARIMA.loglike_kalman"><code class="xref py py-obj docutils literal"><span class="pre">loglike_kalman</span></code></a>(params[,&nbsp;set_sigma2])</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike_kalman.html#statsmodels.tsa.arima_model.ARIMA.loglike_kalman" title="statsmodels.tsa.arima_model.ARIMA.loglike_kalman"><code class="xref py py-obj docutils literal"><span class="pre">loglike_kalman</span></code></a>(params[,&nbsp;set_sigma2])</td>
 <td>Compute exact loglikelihood for ARMA(p,q) model by the Kalman Filter.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.predict.html#statsmodels.tsa.arima_model.ARIMA.predict" title="statsmodels.tsa.arima_model.ARIMA.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(params[,&nbsp;start,&nbsp;end,&nbsp;exog,&nbsp;typ,&nbsp;dynamic])</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.predict.html#statsmodels.tsa.arima_model.ARIMA.predict" title="statsmodels.tsa.arima_model.ARIMA.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(params[,&nbsp;start,&nbsp;end,&nbsp;exog,&nbsp;typ,&nbsp;dynamic])</td>
 <td>ARIMA model in-sample and out-of-sample prediction</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.score.html#statsmodels.tsa.arima_model.ARIMA.score" title="statsmodels.tsa.arima_model.ARIMA.score"><code class="xref py py-obj docutils literal"><span class="pre">score</span></code></a>(params)</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.score.html#statsmodels.tsa.arima_model.ARIMA.score" title="statsmodels.tsa.arima_model.ARIMA.score"><code class="xref py py-obj docutils literal"><span class="pre">score</span></code></a>(params)</td>
+<td>Compute the score function at params.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.fit.html#statsmodels.tsa.arima_model.ARIMA.fit" title="statsmodels.tsa.arima_model.ARIMA.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([start_params,&nbsp;trend,&nbsp;method,&nbsp;...])</td>
+<td>Fits ARIMA(p,d,q) model by exact maximum likelihood via Kalman filter.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.from_formula.html#statsmodels.tsa.arima_model.ARIMA.from_formula" title="statsmodels.tsa.arima_model.ARIMA.from_formula"><code class="xref py py-obj docutils literal"><span class="pre">from_formula</span></code></a>(formula,&nbsp;data[,&nbsp;subset])</td>
+<td>Create a Model from a formula and dataframe.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.geterrors.html#statsmodels.tsa.arima_model.ARIMA.geterrors" title="statsmodels.tsa.arima_model.ARIMA.geterrors"><code class="xref py py-obj docutils literal"><span class="pre">geterrors</span></code></a>(params)</td>
+<td>Get the errors of the ARMA process.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.hessian.html#statsmodels.tsa.arima_model.ARIMA.hessian" title="statsmodels.tsa.arima_model.ARIMA.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(params)</td>
+<td>Compute the Hessian at params,</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.information.html#statsmodels.tsa.arima_model.ARIMA.information" title="statsmodels.tsa.arima_model.ARIMA.information"><code class="xref py py-obj docutils literal"><span class="pre">information</span></code></a>(params)</td>
+<td>Fisher information matrix of model</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.initialize.html#statsmodels.tsa.arima_model.ARIMA.initialize" title="statsmodels.tsa.arima_model.ARIMA.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>()</td>
+<td>Initialize (possibly re-initialize) a Model instance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike.html#statsmodels.tsa.arima_model.ARIMA.loglike" title="statsmodels.tsa.arima_model.ARIMA.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(params[,&nbsp;set_sigma2])</td>
+<td>Compute the log-likelihood for ARMA(p,q) model</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike_css.html#statsmodels.tsa.arima_model.ARIMA.loglike_css" title="statsmodels.tsa.arima_model.ARIMA.loglike_css"><code class="xref py py-obj docutils literal"><span class="pre">loglike_css</span></code></a>(params[,&nbsp;set_sigma2])</td>
+<td>Conditional Sum of Squares likelihood function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.loglike_kalman.html#statsmodels.tsa.arima_model.ARIMA.loglike_kalman" title="statsmodels.tsa.arima_model.ARIMA.loglike_kalman"><code class="xref py py-obj docutils literal"><span class="pre">loglike_kalman</span></code></a>(params[,&nbsp;set_sigma2])</td>
+<td>Compute exact loglikelihood for ARMA(p,q) model by the Kalman Filter.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.predict.html#statsmodels.tsa.arima_model.ARIMA.predict" title="statsmodels.tsa.arima_model.ARIMA.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(params[,&nbsp;start,&nbsp;end,&nbsp;exog,&nbsp;typ,&nbsp;dynamic])</td>
+<td>ARIMA model in-sample and out-of-sample prediction</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.arima_model.ARIMA.score.html#statsmodels.tsa.arima_model.ARIMA.score" title="statsmodels.tsa.arima_model.ARIMA.score"><code class="xref py py-obj docutils literal"><span class="pre">score</span></code></a>(params)</td>
 <td>Compute the score function at params.</td>
 </tr>
 </tbody>
@@ -193,11 +255,8 @@ change for the case of the <cite>css</cite> model in future versions.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.tsa.arima_model.ARMAResults.summary2.html"
-                        title="previous chapter">statsmodels.tsa.arima_model.ARMAResults.summary2</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="statsmodels.tsa.arima_model.ARIMA.fit.html"
-                        title="next chapter">statsmodels.tsa.arima_model.ARIMA.fit</a></p>
+  <p class="topless"><a href="statsmodels.tsa.arima_model.ARMAResults.wald_test_terms.html"
+                        title="previous chapter">statsmodels.tsa.arima_model.ARMAResults.wald_test_terms</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -213,9 +272,6 @@ change for the case of the <cite>css</cite> model in future versions.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -224,7 +280,7 @@ change for the case of the <cite>css</cite> model in future versions.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

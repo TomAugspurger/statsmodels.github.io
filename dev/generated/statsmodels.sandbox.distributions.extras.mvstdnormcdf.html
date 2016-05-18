@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.sandbox.distributions.extras.mvstdnormcdf &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.sandbox.distributions.extras.mvstdnormcdf &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Distributions" href="../distributions.html" />
     <link rel="next" title="statsmodels.sandbox.distributions.extras.mvnormcdf" href="statsmodels.sandbox.distributions.extras.mvnormcdf.html" />
-    <link rel="prev" title="statsmodels.sandbox.distributions.extras.NormExpan_gen" href="statsmodels.sandbox.distributions.extras.NormExpan_gen.html" />
+    <link rel="prev" title="statsmodels.sandbox.distributions.extras.NormExpan_gen.var" href="statsmodels.sandbox.distributions.extras.NormExpan_gen.var.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -59,7 +59,7 @@
           <a href="statsmodels.sandbox.distributions.extras.mvnormcdf.html" title="statsmodels.sandbox.distributions.extras.mvnormcdf"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="statsmodels.sandbox.distributions.extras.NormExpan_gen.html" title="statsmodels.sandbox.distributions.extras.NormExpan_gen"
+          <a href="statsmodels.sandbox.distributions.extras.NormExpan_gen.var.html" title="statsmodels.sandbox.distributions.extras.NormExpan_gen.var"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -110,8 +110,8 @@ of dimensions of the multivariate normal distribution. It can contain
 <blockquote>
 <div><ul>
 <li><dl class="first docutils">
-<dt>maxpts <span class="classifier-delimiter">:</span> <span class="classifier">int, maximum number of function values allowed. This</span></dt>
-<dd><p class="first last">parameter can be used to limit the time. A sensible
+<dt>maxpts</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int, maximum number of function values allowed. This</span><dd><p class="first last">parameter can be used to limit the time. A sensible
 strategy is to start with <cite>maxpts</cite> = 1000*N, and then
 increase <cite>maxpts</cite> if ERROR is too large.</p>
 </dd>
@@ -148,16 +148,16 @@ For general dimension the correlation matrix can be provided either
 as a one-dimensional array of the upper triangular correlation
 coefficients stacked by rows, or as full square correlation matrix</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">mvstdnormcdf</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">mvstdnormcdf</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="go">0.5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">corr</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">mvstdnormcdf</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="mf">100.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">corr</span><span class="p">,</span> <span class="n">abseps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">mvstdnormcdf</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="mf">100.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">corr</span><span class="p">,</span> <span class="n">abseps</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span>
 <span class="go">0.166666399198</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">mvstdnormcdf</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="mf">100.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="n">corr</span><span class="p">,</span> <span class="n">abseps</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">mvstdnormcdf</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="mf">100.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="n">corr</span><span class="p">,</span> <span class="n">abseps</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
 <span class="go">something wrong completion with ERROR &gt; EPS and MAXPTS function values used;</span>
 <span class="go">                    increase MAXPTS to decrease ERROR; 1.048330348e-006</span>
 <span class="go">0.166666546218</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">mvstdnormcdf</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="mf">100.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">corr</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">mvstdnormcdf</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="o">-</span><span class="mf">100.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span> <span class="n">corr</span><span class="p">,</span>
 <span class="go">                        maxpts=100000, abseps=1e-8)</span>
 <span class="go">0.166666588293</span>
 </pre></div>
@@ -176,8 +176,8 @@ coefficients stacked by rows, or as full square correlation matrix</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.sandbox.distributions.extras.NormExpan_gen.html"
-                        title="previous chapter">statsmodels.sandbox.distributions.extras.NormExpan_gen</a></p>
+  <p class="topless"><a href="statsmodels.sandbox.distributions.extras.NormExpan_gen.var.html"
+                        title="previous chapter">statsmodels.sandbox.distributions.extras.NormExpan_gen.var</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="statsmodels.sandbox.distributions.extras.mvnormcdf.html"
                         title="next chapter">statsmodels.sandbox.distributions.extras.mvnormcdf</a></p>
@@ -196,9 +196,6 @@ coefficients stacked by rows, or as full square correlation matrix</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -207,7 +204,7 @@ coefficients stacked by rows, or as full square correlation matrix</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

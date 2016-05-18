@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.sandbox.sysreg.SUR &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.sandbox.sysreg.SUR &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Sandbox" href="../sandbox.html" />
     <link rel="next" title="statsmodels.sandbox.sysreg.SUR.fit" href="statsmodels.sandbox.sysreg.SUR.fit.html" />
     <link rel="prev" title="statsmodels.sandbox.regression.try_catdata.labelmeanfilter_str" href="statsmodels.sandbox.regression.try_catdata.labelmeanfilter_str.html" />
@@ -114,7 +114,7 @@ information.</p>
 <p>All individual equations are assumed to be well-behaved, homoeskedastic
 iid errors.  This is basically an extension of GLS, using sparse matrices.</p>
 <div class="math">
-<p><img src="../_images/math/ed39f7a328b207744192f004936ecbea3a03a85e.png" alt="\Sigma=\left[\begin{array}{cccc}
+<p><img src="../_images/math/f052278b3aa6efa574f0b51d6ae1c8cb85650917.png" alt="\Sigma=\left[\begin{array}{cccc}
 \sigma_{11} &amp; \sigma_{12} &amp; \cdots &amp; \sigma_{1M}\\
 \sigma_{21} &amp; \sigma_{22} &amp; \cdots &amp; \sigma_{2M}\\
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
@@ -193,6 +193,27 @@ iid errors.  This is basically an extension of GLS, using sparse matrices.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.sandbox.sysreg.SUR.fit.html#statsmodels.sandbox.sysreg.SUR.fit" title="statsmodels.sandbox.sysreg.SUR.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([igls,&nbsp;tol,&nbsp;maxiter])</td>
+<td>igls : bool</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.sandbox.sysreg.SUR.initialize.html#statsmodels.sandbox.sysreg.SUR.initialize" title="statsmodels.sandbox.sysreg.SUR.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.sandbox.sysreg.SUR.predict.html#statsmodels.sandbox.sysreg.SUR.predict" title="statsmodels.sandbox.sysreg.SUR.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(design)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.sandbox.sysreg.SUR.whiten.html#statsmodels.sandbox.sysreg.SUR.whiten" title="statsmodels.sandbox.sysreg.SUR.whiten"><code class="xref py py-obj docutils literal"><span class="pre">whiten</span></code></a>(X)</td>
+<td>SUR whiten method.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -227,9 +248,6 @@ iid errors.  This is basically an extension of GLS, using sparse matrices.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -238,7 +256,7 @@ iid errors.  This is basically an extension of GLS, using sparse matrices.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

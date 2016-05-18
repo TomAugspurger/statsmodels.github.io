@@ -5,7 +5,7 @@
 ANOVA
 =====
 
-Analysis of Variance models
+Analysis of Variance models 
 
 Examples
 --------
@@ -18,7 +18,7 @@ Examples
     moore = sm.datasets.get_rdataset("Moore", "car",
                                      cache=True) # load data
     data = moore.data
-    data = data.rename(columns={"partner.status" :
+    data = data.rename(columns={"partner.status":
                                 "partner_status"}) # make name pythonic
     moore_lm = ols('conformity ~ C(fcategory, Sum)*C(partner_status, Sum)',
                     data=data).fit()
@@ -28,10 +28,7 @@ Examples
 
 A more detailed example can be found here:
 
-.. toctree::
-  :maxdepth: 1
-
-  examples/notebooks/generated/interactions_anova
+*  `ANOVA <examples/notebooks/generated/interactions_anova.html>`__
 
 Module Reference
 ----------------

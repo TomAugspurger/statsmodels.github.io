@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.pdf &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.pdf &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,9 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional" href="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.html" />
-    <link rel="next" title="statsmodels.nonparametric.kernel_regression.KernelReg" href="statsmodels.nonparametric.kernel_regression.KernelReg.html" />
+    <link rel="next" title="statsmodels.nonparametric.kernel_density.EstimatorSettings" href="statsmodels.nonparametric.kernel_density.EstimatorSettings.html" />
     <link rel="prev" title="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.loo_likelihood" href="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.loo_likelihood.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
@@ -56,7 +56,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="statsmodels.nonparametric.kernel_regression.KernelReg.html" title="statsmodels.nonparametric.kernel_regression.KernelReg"
+          <a href="statsmodels.nonparametric.kernel_density.EstimatorSettings.html" title="statsmodels.nonparametric.kernel_density.EstimatorSettings"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.loo_likelihood.html" title="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.loo_likelihood"
@@ -114,10 +114,10 @@ training data is used.</p>
 <p class="rubric">Notes</p>
 <p>The formula for the conditional probability density is:</p>
 <div class="math">
-<p><img src="../_images/math/334419544b0d73ba2d5745478b674199b05f1989.png" alt="f(X|Y)=\frac{f(X,Y)}{f(Y)}"/></p>
+<p><img src="../_images/math/2157caac4ee7ff77a579fd885d0fd58a7fe23ac1.png" alt="f(X|Y)=\frac{f(X,Y)}{f(Y)}"/></p>
 </div><p>with</p>
 <div class="math">
-<p><img src="../_images/math/28e90dc46c633067e95789ef5817b757b4ae31f8.png" alt="f(X)=\prod_{s=1}^{q}h_{s}^{-1}k
+<p><img src="../_images/math/493ba325b33ed4ea7601940a7463106a588f2fb5.png" alt="f(X)=\prod_{s=1}^{q}h_{s}^{-1}k
 \left(\frac{X_{is}-X_{js}}{h_{s}}\right)"/></p>
 </div><p>where <img class="math" src="../_images/math/99aa4698956c865059a0ab31e3bdde707a85853d.png" alt="k" style="vertical-align: 0px"/> is the appropriate kernel for each variable.</p>
 </dd></dl>
@@ -137,8 +137,8 @@ training data is used.</p>
   <p class="topless"><a href="statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.loo_likelihood.html"
                         title="previous chapter">statsmodels.nonparametric.kernel_density.KDEMultivariateConditional.loo_likelihood</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="statsmodels.nonparametric.kernel_regression.KernelReg.html"
-                        title="next chapter">statsmodels.nonparametric.kernel_regression.KernelReg</a></p>
+  <p class="topless"><a href="statsmodels.nonparametric.kernel_density.EstimatorSettings.html"
+                        title="next chapter">statsmodels.nonparametric.kernel_density.EstimatorSettings</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -154,9 +154,6 @@ training data is used.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -165,7 +162,7 @@ training data is used.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

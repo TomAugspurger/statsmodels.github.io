@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.tsa.statespace.sarimax.SARIMAX &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.tsa.statespace.sarimax.SARIMAX &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Time Series Analysis by State Space Methods statespace" href="../statespace.html" />
     <link rel="next" title="statsmodels.tsa.statespace.sarimax.SARIMAX.filter" href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html" />
-    <link rel="prev" title="statsmodels.tsa.statespace.tools.validate_vector_shape" href="statsmodels.tsa.statespace.tools.validate_vector_shape.html" />
+    <link rel="prev" title="Time Series Analysis by State Space Methods statespace" href="../statespace.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -59,7 +59,7 @@
           <a href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html" title="statsmodels.tsa.statespace.sarimax.SARIMAX.filter"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="statsmodels.tsa.statespace.tools.validate_vector_shape.html" title="statsmodels.tsa.statespace.tools.validate_vector_shape"
+          <a href="../statespace.html" title="Time Series Analysis by State Space Methods statespace"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -188,11 +188,11 @@ matrices or for Kalman filtering options. See <cite>Representation</cite>, and
 <p class="rubric">Notes</p>
 <p>The SARIMA model is specified <img class="math" src="../_images/math/a423296126f2bc3f5315f08ff0e4ed3f855fed69.png" alt="(p, d, q) \times (P, D, Q)_s" style="vertical-align: -4px"/>.</p>
 <div class="math">
-<p><img src="../_images/math/b8fb52384848f1d3650514990177916c36491054.png" alt="\phi_p (L) \tilde \phi_P (L^s) \Delta^d \Delta_s^D y_t = A(t) +
+<p><img src="../_images/math/2818107235719db6bf79865209fea4ed06957726.png" alt="\phi_p (L) \tilde \phi_P (L^s) \Delta^d \Delta_s^D y_t = A(t) +
     \theta_q (L) \tilde \theta_Q (L^s) \zeta_t"/></p>
 </div><p>In terms of a univariate structural model, this can be represented as</p>
 <div class="math">
-<p><img src="../_images/math/ffeb60840b512c158b09107a16b5cf4c76e4a7b5.png" alt="y_t &amp; = u_t + \eta_t \\
+<p><img src="../_images/math/3f9cee935b4995509a6bf1596ed7f3a4c648c325.png" alt="y_t &amp; = u_t + \eta_t \\
 \phi_p (L) \tilde \phi_P (L^s) \Delta^d \Delta_s^D u_t &amp; = A(t) +
     \theta_q (L) \tilde \theta_Q (L^s) \zeta_t"/></p>
 </div><p>where <img class="math" src="../_images/math/d9c90a3bf3e6c694d81bffa3d8119a137bc5cdad.png" alt="\eta_t" style="vertical-align: -4px"/> is only applicable in the case of measurement error
@@ -201,13 +201,13 @@ p=q=0).</p>
 <p>In terms of this model, regression with SARIMA errors can be represented
 easily as</p>
 <div class="math">
-<p><img src="../_images/math/8c72d9a6a34a1ca4a7269b2e2a2bce80de963ba6.png" alt="y_t &amp; = \beta_t x_t + u_t \\
+<p><img src="../_images/math/0542cde006004707ce0142f6a2962bcdb8c3c335.png" alt="y_t &amp; = \beta_t x_t + u_t \\
 \phi_p (L) \tilde \phi_P (L^s) \Delta^d \Delta_s^D u_t &amp; = A(t) +
     \theta_q (L) \tilde \theta_Q (L^s) \zeta_t"/></p>
 </div><p>this model is the one used when exogenous regressors are provided.</p>
 <p>Note that the reduced form lag polynomials will be written as:</p>
 <div class="math">
-<p><img src="../_images/math/69ab6641cbfb98c5d3e1b743eacb69e4a75f75fd.png" alt="\Phi (L) \equiv \phi_p (L) \tilde \phi_P (L^s) \\
+<p><img src="../_images/math/238d72df9c47e9b3c88ed312e6e8fb186af6f0cf.png" alt="\Phi (L) \equiv \phi_p (L) \tilde \phi_P (L^s) \\
 \Theta (L) \equiv \theta_q (L) \tilde \theta_Q (L^s)"/></p>
 </div><p>If <cite>mle_regression</cite> is True, regression coefficients are treated as
 additional parameters to be estimated via maximum likelihood. Otherwise
@@ -231,7 +231,7 @@ that the first d + sD observations are lost) must be used.</p>
 <p>Many other packages use the Hamilton representation, so that tests against
 Stata and R require using it along with simple differencing (as Stata
 does).</p>
-<p>Detailed information about state space models can be found in <a class="reference internal" href="#r28" id="id1">[R28]</a>. Some
+<p>Detailed information about state space models can be found in <a class="reference internal" href="#r21" id="id1">[R21]</a>. Some
 specific references are:</p>
 <ul class="simple">
 <li>Chapter 3.4 describes ARMA and ARIMA models in state space form (using
@@ -249,10 +249,10 @@ dataset. A replication of this section is available in an example
 IPython notebook in the documentation.</li>
 </ul>
 <p class="rubric">References</p>
-<table class="docutils citation" frame="void" id="r28" rules="none">
+<table class="docutils citation" frame="void" id="r21" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[R28]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Durbin, James, and Siem Jan Koopman. 2012.
+<tr><td class="label">[R21]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Durbin, James, and Siem Jan Koopman. 2012.
 Time Series Analysis by State Space Methods: Second Edition.
 Oxford University Press.</td></tr>
 </tbody>
@@ -357,34 +357,199 @@ Oxford University Press.</td></tr>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html#statsmodels.tsa.statespace.sarimax.SARIMAX.filter" title="statsmodels.tsa.statespace.sarimax.SARIMAX.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(params[,&nbsp;transformed,&nbsp;cov_type,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html#statsmodels.tsa.statespace.sarimax.SARIMAX.filter" title="statsmodels.tsa.statespace.sarimax.SARIMAX.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(params,&nbsp;**kwargs)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.fit.html#statsmodels.tsa.statespace.sarimax.SARIMAX.fit" title="statsmodels.tsa.statespace.sarimax.SARIMAX.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([start_params,&nbsp;transformed,&nbsp;cov_type,&nbsp;...])</td>
+<td>Fits the model by maximum likelihood via Kalman filter.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula.html#statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula" title="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula"><code class="xref py py-obj docutils literal"><span class="pre">from_formula</span></code></a>(formula,&nbsp;data[,&nbsp;subset])</td>
+<td>Not implemented for state space models</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.hessian.html#statsmodels.tsa.statespace.sarimax.SARIMAX.hessian" title="statsmodels.tsa.statespace.sarimax.SARIMAX.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(params,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Hessian matrix of the likelihood function, evaluated at the given</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.impulse_responses.html#statsmodels.tsa.statespace.sarimax.SARIMAX.impulse_responses" title="statsmodels.tsa.statespace.sarimax.SARIMAX.impulse_responses"><code class="xref py py-obj docutils literal"><span class="pre">impulse_responses</span></code></a>(params[,&nbsp;steps,&nbsp;impulse,&nbsp;...])</td>
+<td>Impulse response function</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.information.html#statsmodels.tsa.statespace.sarimax.SARIMAX.information" title="statsmodels.tsa.statespace.sarimax.SARIMAX.information"><code class="xref py py-obj docutils literal"><span class="pre">information</span></code></a>(params)</td>
+<td>Fisher information matrix of model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>()</td>
 <td>Initialize the SARIMAX model.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse"><code class="xref py py-obj docutils literal"><span class="pre">initialize_approximate_diffuse</span></code></a>([variance])</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse"><code class="xref py py-obj docutils literal"><span class="pre">initialize_approximate_diffuse</span></code></a>([variance])</td>
 <td>Initialize the statespace model with approximate diffuse values.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known"><code class="xref py py-obj docutils literal"><span class="pre">initialize_known</span></code></a>(initial_state,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known"><code class="xref py py-obj docutils literal"><span class="pre">initialize_known</span></code></a>(initial_state,&nbsp;...)</td>
 <td>Initialize the statespace model with known distribution for initial state.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state"><code class="xref py py-obj docutils literal"><span class="pre">initialize_state</span></code></a>([variance])</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state"><code class="xref py py-obj docutils literal"><span class="pre">initialize_state</span></code></a>([variance,&nbsp;complex_step])</td>
 <td>Initialize state and state covariance arrays in preparation for the Kalman filter.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_statespace.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_statespace" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_statespace"><code class="xref py py-obj docutils literal"><span class="pre">initialize_statespace</span></code></a>(**kwargs)</td>
+<td>Initialize the state space representation</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_stationary.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_stationary" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_stationary"><code class="xref py py-obj docutils literal"><span class="pre">initialize_stationary</span></code></a>()</td>
 <td>Initialize the statespace model as stationary.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data.html#statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data" title="statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data"><code class="xref py py-obj docutils literal"><span class="pre">prepare_data</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.loglike.html#statsmodels.tsa.statespace.sarimax.SARIMAX.loglike" title="statsmodels.tsa.statespace.sarimax.SARIMAX.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(params,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Loglikelihood evaluation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.loglikeobs.html#statsmodels.tsa.statespace.sarimax.SARIMAX.loglikeobs" title="statsmodels.tsa.statespace.sarimax.SARIMAX.loglikeobs"><code class="xref py py-obj docutils literal"><span class="pre">loglikeobs</span></code></a>(params[,&nbsp;transformed,&nbsp;complex_step])</td>
+<td>Loglikelihood evaluation</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.observed_information_matrix.html#statsmodels.tsa.statespace.sarimax.SARIMAX.observed_information_matrix" title="statsmodels.tsa.statespace.sarimax.SARIMAX.observed_information_matrix"><code class="xref py py-obj docutils literal"><span class="pre">observed_information_matrix</span></code></a>(params[,&nbsp;...])</td>
+<td>Observed information matrix</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.opg_information_matrix.html#statsmodels.tsa.statespace.sarimax.SARIMAX.opg_information_matrix" title="statsmodels.tsa.statespace.sarimax.SARIMAX.opg_information_matrix"><code class="xref py py-obj docutils literal"><span class="pre">opg_information_matrix</span></code></a>(params[,&nbsp;...])</td>
+<td>Outer product of gradients information matrix</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.predict.html#statsmodels.tsa.statespace.sarimax.SARIMAX.predict" title="statsmodels.tsa.statespace.sarimax.SARIMAX.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(params[,&nbsp;exog])</td>
+<td>After a model has been fit predict returns the fitted values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data.html#statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data" title="statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data"><code class="xref py py-obj docutils literal"><span class="pre">prepare_data</span></code></a>()</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params.html#statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params" title="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params"><code class="xref py py-obj docutils literal"><span class="pre">transform_params</span></code></a>(unconstrained)</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.score.html#statsmodels.tsa.statespace.sarimax.SARIMAX.score" title="statsmodels.tsa.statespace.sarimax.SARIMAX.score"><code class="xref py py-obj docutils literal"><span class="pre">score</span></code></a>(params,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Compute the score function at params.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.score_obs.html#statsmodels.tsa.statespace.sarimax.SARIMAX.score_obs" title="statsmodels.tsa.statespace.sarimax.SARIMAX.score_obs"><code class="xref py py-obj docutils literal"><span class="pre">score_obs</span></code></a>(params[,&nbsp;method,&nbsp;transformed,&nbsp;...])</td>
+<td>Compute the score per observation, evaluated at params</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_conserve_memory.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_conserve_memory" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_conserve_memory"><code class="xref py py-obj docutils literal"><span class="pre">set_conserve_memory</span></code></a>([conserve_memory])</td>
+<td>Set the memory conservation method</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_filter_method.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_filter_method" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_filter_method"><code class="xref py py-obj docutils literal"><span class="pre">set_filter_method</span></code></a>([filter_method])</td>
+<td>Set the filtering method</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_inversion_method.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_inversion_method" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_inversion_method"><code class="xref py py-obj docutils literal"><span class="pre">set_inversion_method</span></code></a>([inversion_method])</td>
+<td>Set the inversion method</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_smoother_output.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_smoother_output" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_smoother_output"><code class="xref py py-obj docutils literal"><span class="pre">set_smoother_output</span></code></a>([smoother_output])</td>
+<td>Set the smoother output</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_stability_method.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_stability_method" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_stability_method"><code class="xref py py-obj docutils literal"><span class="pre">set_stability_method</span></code></a>([stability_method])</td>
+<td>Set the numerical stability method</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.simulate.html#statsmodels.tsa.statespace.sarimax.SARIMAX.simulate" title="statsmodels.tsa.statespace.sarimax.SARIMAX.simulate"><code class="xref py py-obj docutils literal"><span class="pre">simulate</span></code></a>(params,&nbsp;nsimulations[,&nbsp;...])</td>
+<td>Simulate a new time series following the state space model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.smooth.html#statsmodels.tsa.statespace.sarimax.SARIMAX.smooth" title="statsmodels.tsa.statespace.sarimax.SARIMAX.smooth"><code class="xref py py-obj docutils literal"><span class="pre">smooth</span></code></a>(params,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_jacobian.html#statsmodels.tsa.statespace.sarimax.SARIMAX.transform_jacobian" title="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_jacobian"><code class="xref py py-obj docutils literal"><span class="pre">transform_jacobian</span></code></a>(unconstrained[,&nbsp;...])</td>
+<td>Jacobian matrix for the parameter transformation function</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params.html#statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params" title="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params"><code class="xref py py-obj docutils literal"><span class="pre">transform_params</span></code></a>(unconstrained)</td>
 <td>Transform unconstrained parameters used by the optimizer to constrained parameters used in likelihood evaluation.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params.html#statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params" title="statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params"><code class="xref py py-obj docutils literal"><span class="pre">untransform_params</span></code></a>(constrained)</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params.html#statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params" title="statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params"><code class="xref py py-obj docutils literal"><span class="pre">untransform_params</span></code></a>(constrained)</td>
 <td>Transform constrained parameters used in likelihood evaluation</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.update.html#statsmodels.tsa.statespace.sarimax.SARIMAX.update" title="statsmodels.tsa.statespace.sarimax.SARIMAX.update"><code class="xref py py-obj docutils literal"><span class="pre">update</span></code></a>(params[,&nbsp;transformed])</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.update.html#statsmodels.tsa.statespace.sarimax.SARIMAX.update" title="statsmodels.tsa.statespace.sarimax.SARIMAX.update"><code class="xref py py-obj docutils literal"><span class="pre">update</span></code></a>(params[,&nbsp;transformed,&nbsp;complex_step])</td>
+<td>Update the parameters of the model</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html#statsmodels.tsa.statespace.sarimax.SARIMAX.filter" title="statsmodels.tsa.statespace.sarimax.SARIMAX.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(params,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.fit.html#statsmodels.tsa.statespace.sarimax.SARIMAX.fit" title="statsmodels.tsa.statespace.sarimax.SARIMAX.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>([start_params,&nbsp;transformed,&nbsp;cov_type,&nbsp;...])</td>
+<td>Fits the model by maximum likelihood via Kalman filter.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula.html#statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula" title="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula"><code class="xref py py-obj docutils literal"><span class="pre">from_formula</span></code></a>(formula,&nbsp;data[,&nbsp;subset])</td>
+<td>Not implemented for state space models</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.hessian.html#statsmodels.tsa.statespace.sarimax.SARIMAX.hessian" title="statsmodels.tsa.statespace.sarimax.SARIMAX.hessian"><code class="xref py py-obj docutils literal"><span class="pre">hessian</span></code></a>(params,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Hessian matrix of the likelihood function, evaluated at the given</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.impulse_responses.html#statsmodels.tsa.statespace.sarimax.SARIMAX.impulse_responses" title="statsmodels.tsa.statespace.sarimax.SARIMAX.impulse_responses"><code class="xref py py-obj docutils literal"><span class="pre">impulse_responses</span></code></a>(params[,&nbsp;steps,&nbsp;impulse,&nbsp;...])</td>
+<td>Impulse response function</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.information.html#statsmodels.tsa.statespace.sarimax.SARIMAX.information" title="statsmodels.tsa.statespace.sarimax.SARIMAX.information"><code class="xref py py-obj docutils literal"><span class="pre">information</span></code></a>(params)</td>
+<td>Fisher information matrix of model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize"><code class="xref py py-obj docutils literal"><span class="pre">initialize</span></code></a>()</td>
+<td>Initialize the SARIMAX model.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_approximate_diffuse"><code class="xref py py-obj docutils literal"><span class="pre">initialize_approximate_diffuse</span></code></a>([variance])</td>
+<td>Initialize the statespace model with approximate diffuse values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_known"><code class="xref py py-obj docutils literal"><span class="pre">initialize_known</span></code></a>(initial_state,&nbsp;...)</td>
+<td>Initialize the statespace model with known distribution for initial state.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_state"><code class="xref py py-obj docutils literal"><span class="pre">initialize_state</span></code></a>([variance,&nbsp;complex_step])</td>
+<td>Initialize state and state covariance arrays in preparation for the Kalman filter.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_statespace.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_statespace" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_statespace"><code class="xref py py-obj docutils literal"><span class="pre">initialize_statespace</span></code></a>(**kwargs)</td>
+<td>Initialize the state space representation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_stationary.html#statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_stationary" title="statsmodels.tsa.statespace.sarimax.SARIMAX.initialize_stationary"><code class="xref py py-obj docutils literal"><span class="pre">initialize_stationary</span></code></a>()</td>
+<td>Initialize the statespace model as stationary.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.loglike.html#statsmodels.tsa.statespace.sarimax.SARIMAX.loglike" title="statsmodels.tsa.statespace.sarimax.SARIMAX.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(params,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Loglikelihood evaluation</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.loglikeobs.html#statsmodels.tsa.statespace.sarimax.SARIMAX.loglikeobs" title="statsmodels.tsa.statespace.sarimax.SARIMAX.loglikeobs"><code class="xref py py-obj docutils literal"><span class="pre">loglikeobs</span></code></a>(params[,&nbsp;transformed,&nbsp;complex_step])</td>
+<td>Loglikelihood evaluation</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.observed_information_matrix.html#statsmodels.tsa.statespace.sarimax.SARIMAX.observed_information_matrix" title="statsmodels.tsa.statespace.sarimax.SARIMAX.observed_information_matrix"><code class="xref py py-obj docutils literal"><span class="pre">observed_information_matrix</span></code></a>(params[,&nbsp;...])</td>
+<td>Observed information matrix</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.opg_information_matrix.html#statsmodels.tsa.statespace.sarimax.SARIMAX.opg_information_matrix" title="statsmodels.tsa.statespace.sarimax.SARIMAX.opg_information_matrix"><code class="xref py py-obj docutils literal"><span class="pre">opg_information_matrix</span></code></a>(params[,&nbsp;...])</td>
+<td>Outer product of gradients information matrix</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.predict.html#statsmodels.tsa.statespace.sarimax.SARIMAX.predict" title="statsmodels.tsa.statespace.sarimax.SARIMAX.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(params[,&nbsp;exog])</td>
+<td>After a model has been fit predict returns the fitted values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data.html#statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data" title="statsmodels.tsa.statespace.sarimax.SARIMAX.prepare_data"><code class="xref py py-obj docutils literal"><span class="pre">prepare_data</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.score.html#statsmodels.tsa.statespace.sarimax.SARIMAX.score" title="statsmodels.tsa.statespace.sarimax.SARIMAX.score"><code class="xref py py-obj docutils literal"><span class="pre">score</span></code></a>(params,&nbsp;*args,&nbsp;**kwargs)</td>
+<td>Compute the score function at params.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.score_obs.html#statsmodels.tsa.statespace.sarimax.SARIMAX.score_obs" title="statsmodels.tsa.statespace.sarimax.SARIMAX.score_obs"><code class="xref py py-obj docutils literal"><span class="pre">score_obs</span></code></a>(params[,&nbsp;method,&nbsp;transformed,&nbsp;...])</td>
+<td>Compute the score per observation, evaluated at params</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_conserve_memory.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_conserve_memory" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_conserve_memory"><code class="xref py py-obj docutils literal"><span class="pre">set_conserve_memory</span></code></a>([conserve_memory])</td>
+<td>Set the memory conservation method</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_filter_method.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_filter_method" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_filter_method"><code class="xref py py-obj docutils literal"><span class="pre">set_filter_method</span></code></a>([filter_method])</td>
+<td>Set the filtering method</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_inversion_method.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_inversion_method" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_inversion_method"><code class="xref py py-obj docutils literal"><span class="pre">set_inversion_method</span></code></a>([inversion_method])</td>
+<td>Set the inversion method</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_smoother_output.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_smoother_output" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_smoother_output"><code class="xref py py-obj docutils literal"><span class="pre">set_smoother_output</span></code></a>([smoother_output])</td>
+<td>Set the smoother output</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.set_stability_method.html#statsmodels.tsa.statespace.sarimax.SARIMAX.set_stability_method" title="statsmodels.tsa.statespace.sarimax.SARIMAX.set_stability_method"><code class="xref py py-obj docutils literal"><span class="pre">set_stability_method</span></code></a>([stability_method])</td>
+<td>Set the numerical stability method</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.simulate.html#statsmodels.tsa.statespace.sarimax.SARIMAX.simulate" title="statsmodels.tsa.statespace.sarimax.SARIMAX.simulate"><code class="xref py py-obj docutils literal"><span class="pre">simulate</span></code></a>(params,&nbsp;nsimulations[,&nbsp;...])</td>
+<td>Simulate a new time series following the state space model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.smooth.html#statsmodels.tsa.statespace.sarimax.SARIMAX.smooth" title="statsmodels.tsa.statespace.sarimax.SARIMAX.smooth"><code class="xref py py-obj docutils literal"><span class="pre">smooth</span></code></a>(params,&nbsp;**kwargs)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_jacobian.html#statsmodels.tsa.statespace.sarimax.SARIMAX.transform_jacobian" title="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_jacobian"><code class="xref py py-obj docutils literal"><span class="pre">transform_jacobian</span></code></a>(unconstrained[,&nbsp;...])</td>
+<td>Jacobian matrix for the parameter transformation function</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params.html#statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params" title="statsmodels.tsa.statespace.sarimax.SARIMAX.transform_params"><code class="xref py py-obj docutils literal"><span class="pre">transform_params</span></code></a>(unconstrained)</td>
+<td>Transform unconstrained parameters used by the optimizer to constrained parameters used in likelihood evaluation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params.html#statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params" title="statsmodels.tsa.statespace.sarimax.SARIMAX.untransform_params"><code class="xref py py-obj docutils literal"><span class="pre">untransform_params</span></code></a>(constrained)</td>
+<td>Transform constrained parameters used in likelihood evaluation</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.tsa.statespace.sarimax.SARIMAX.update.html#statsmodels.tsa.statespace.sarimax.SARIMAX.update" title="statsmodels.tsa.statespace.sarimax.SARIMAX.update"><code class="xref py py-obj docutils literal"><span class="pre">update</span></code></a>(params[,&nbsp;transformed,&nbsp;complex_step])</td>
 <td>Update the parameters of the model</td>
 </tr>
 </tbody>
@@ -414,29 +579,41 @@ Oxford University Press.</td></tr>
 <tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">initial_transition</span></code></td>
 <td>Initial transition matrix</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">model_latex_names</span></code></td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">initial_variance</span></code></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">initialization</span></code></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">loglikelihood_burn</span></code></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">model_latex_names</span></code></td>
 <td>The latex names of all possible model parameters.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">model_names</span></code></td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">model_names</span></code></td>
 <td>The plain text names of all possible model parameters.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">model_orders</span></code></td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">model_orders</span></code></td>
 <td>The orders of each of the polynomials in the model.</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">optim_hessian</span></code></td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">SARIMAX.optim_hessian</span></code></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">param_names</span></code></td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">param_names</span></code></td>
 <td>List of human readable parameter names (for parameters actually included in the model).</td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">param_terms</span></code></td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">param_terms</span></code></td>
 <td>List of parameters actually included in the model, in sorted order.</td>
 </tr>
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">params_complete</span></code></td>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">params_complete</span></code></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">start_params</span></code></td>
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">start_params</span></code></td>
 <td>Starting parameters for maximum likelihood estimation</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal"><span class="pre">tolerance</span></code></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -454,8 +631,8 @@ Oxford University Press.</td></tr>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.tsa.statespace.tools.validate_vector_shape.html"
-                        title="previous chapter">statsmodels.tsa.statespace.tools.validate_vector_shape</a></p>
+  <p class="topless"><a href="../statespace.html"
+                        title="previous chapter">Time Series Analysis by State Space Methods <code class="docutils literal"><span class="pre">statespace</span></code></a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html"
                         title="next chapter">statsmodels.tsa.statespace.sarimax.SARIMAX.filter</a></p>
@@ -474,9 +651,6 @@ Oxford University Press.</td></tr>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -485,7 +659,7 @@ Oxford University Press.</td></tr>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

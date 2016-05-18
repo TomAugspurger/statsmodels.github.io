@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.stats.diagnostic.het_breushpagan &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.stats.diagnostic.het_breushpagan &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
+    <link rel="up" title="Statistics stats" href="../stats.html" />
+    <link rel="next" title="statsmodels.stats.diagnostic.het_white" href="statsmodels.stats.diagnostic.het_white.html" />
+    <link rel="prev" title="statsmodels.stats.diagnostic.het_goldfeldquandt" href="statsmodels.stats.diagnostic.het_goldfeldquandt.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -52,13 +55,20 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="statsmodels.stats.diagnostic.het_white.html" title="statsmodels.stats.diagnostic.het_white"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="statsmodels.stats.diagnostic.het_goldfeldquandt.html" title="statsmodels.stats.diagnostic.het_goldfeldquandt"
+             accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
 <li><a href="https://github.com/statsmodels/statsmodels/issues">Bugs</a></li> &nbsp;|&nbsp;
 <li><a href="../dev/index.html">Develop</a></li> &nbsp;|&nbsp;
 <li><a href="../examples/index.html">Examples</a></li> &nbsp;|&nbsp;
 <li><a href="../faq.html">FAQ</a></li> &nbsp;|&nbsp;
- 
+
+          <li class="nav-item nav-item-1"><a href="../stats.html" accesskey="U">Statistics <code class="docutils literal"><span class="pre">stats</span></code></a> |</li> 
       </ul>
     </div>  
 
@@ -103,11 +113,12 @@ the variables in x in the form</p>
 <div><p>For the Breusch-Pagan test, this should be the residual of a regression.
 If an array is given in exog, then the residuals are calculated by
 the an OLS regression or resid on exog. In this case resid should
-contain the dependent variable. Exog can be the same as x.</p>
+contain the dependent variable. Exog can be the same as x.
+TODO: I dropped the exog option, should I add it back?</p>
 </div></blockquote>
 <dl class="docutils">
-<dt>exog_het <span class="classifier-delimiter">:</span> <span class="classifier">array_like, (nobs, nvars)</span></dt>
-<dd><p class="first last">This contains variables that might create data dependent
+<dt>exog_het</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">array_like, (nobs, nvars)</span><dd><p class="first last">This contains variables that might create data dependent
 heteroscedasticity.</p>
 </dd>
 </dl>
@@ -123,12 +134,12 @@ heteroscedasticity.</p>
 <dt>lm_pvalue :float</dt>
 <dd><p class="first last">p-value of lagrange multiplier test</p>
 </dd>
-<dt>fvalue <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">f-statistic of the hypothesis that the error variance does not depend
+<dt>fvalue</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">f-statistic of the hypothesis that the error variance does not depend
 on x</p>
 </dd>
-<dt>f_pvalue <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">p-value for the f-statistic</p>
+<dt>f_pvalue</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">p-value for the f-statistic</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -162,6 +173,12 @@ The degrees of freedom for the p-value assume x is full rank.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="statsmodels.stats.diagnostic.het_goldfeldquandt.html"
+                        title="previous chapter">statsmodels.stats.diagnostic.het_goldfeldquandt</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="statsmodels.stats.diagnostic.het_white.html"
+                        title="next chapter">statsmodels.stats.diagnostic.het_white</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -177,9 +194,6 @@ The degrees of freedom for the p-value assume x is full rank.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -188,7 +202,7 @@ The degrees of freedom for the p-value assume x is full rank.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

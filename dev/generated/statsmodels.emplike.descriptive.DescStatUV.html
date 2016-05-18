@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.emplike.descriptive.DescStatUV &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.emplike.descriptive.DescStatUV &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="Empirical Likelihood emplike" href="../emplike.html" />
     <link rel="next" title="statsmodels.emplike.descriptive.DescStatUV.ci_kurt" href="statsmodels.emplike.descriptive.DescStatUV.ci_kurt.html" />
     <link rel="prev" title="statsmodels.emplike.descriptive.DescStat" href="statsmodels.emplike.descriptive.DescStat.html" />
@@ -154,6 +154,45 @@ mean, variance, kurtosis and skewness of a univariate random variable.</p>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.ci_kurt.html#statsmodels.emplike.descriptive.DescStatUV.ci_kurt" title="statsmodels.emplike.descriptive.DescStatUV.ci_kurt"><code class="xref py py-obj docutils literal"><span class="pre">ci_kurt</span></code></a>([sig,&nbsp;upper_bound,&nbsp;lower_bound])</td>
+<td>Returns the confidence interval for kurtosis.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.ci_mean.html#statsmodels.emplike.descriptive.DescStatUV.ci_mean" title="statsmodels.emplike.descriptive.DescStatUV.ci_mean"><code class="xref py py-obj docutils literal"><span class="pre">ci_mean</span></code></a>([sig,&nbsp;method,&nbsp;epsilon,&nbsp;gamma_low,&nbsp;...])</td>
+<td>Returns the confidence interval for the mean.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.ci_skew.html#statsmodels.emplike.descriptive.DescStatUV.ci_skew" title="statsmodels.emplike.descriptive.DescStatUV.ci_skew"><code class="xref py py-obj docutils literal"><span class="pre">ci_skew</span></code></a>([sig,&nbsp;upper_bound,&nbsp;lower_bound])</td>
+<td>Returns the confidence interval for skewness.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.ci_var.html#statsmodels.emplike.descriptive.DescStatUV.ci_var" title="statsmodels.emplike.descriptive.DescStatUV.ci_var"><code class="xref py py-obj docutils literal"><span class="pre">ci_var</span></code></a>([lower_bound,&nbsp;upper_bound,&nbsp;sig])</td>
+<td>Returns the confidence interval for the variance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.plot_contour.html#statsmodels.emplike.descriptive.DescStatUV.plot_contour" title="statsmodels.emplike.descriptive.DescStatUV.plot_contour"><code class="xref py py-obj docutils literal"><span class="pre">plot_contour</span></code></a>(mu_low,&nbsp;mu_high,&nbsp;var_low,&nbsp;...)</td>
+<td>Returns a plot of the confidence region for a univariate mean and variance.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.test_joint_skew_kurt.html#statsmodels.emplike.descriptive.DescStatUV.test_joint_skew_kurt" title="statsmodels.emplike.descriptive.DescStatUV.test_joint_skew_kurt"><code class="xref py py-obj docutils literal"><span class="pre">test_joint_skew_kurt</span></code></a>(skew0,&nbsp;kurt0[,&nbsp;...])</td>
+<td>Returns - 2 x log-likelihood and the p-value for the joint</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.test_kurt.html#statsmodels.emplike.descriptive.DescStatUV.test_kurt" title="statsmodels.emplike.descriptive.DescStatUV.test_kurt"><code class="xref py py-obj docutils literal"><span class="pre">test_kurt</span></code></a>(kurt0[,&nbsp;return_weights])</td>
+<td>Returns -2 x log-likelihood and the p-value for the hypothesized kurtosis.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.test_mean.html#statsmodels.emplike.descriptive.DescStatUV.test_mean" title="statsmodels.emplike.descriptive.DescStatUV.test_mean"><code class="xref py py-obj docutils literal"><span class="pre">test_mean</span></code></a>(mu0[,&nbsp;return_weights])</td>
+<td>Returns - 2 x log-likelihood ratio, p-value and weights for a hypothesis test of the mean.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.test_skew.html#statsmodels.emplike.descriptive.DescStatUV.test_skew" title="statsmodels.emplike.descriptive.DescStatUV.test_skew"><code class="xref py py-obj docutils literal"><span class="pre">test_skew</span></code></a>(skew0[,&nbsp;return_weights])</td>
+<td>Returns  -2 x log-likelihood and p-value for the hypothesized skewness.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.emplike.descriptive.DescStatUV.test_var.html#statsmodels.emplike.descriptive.DescStatUV.test_var" title="statsmodels.emplike.descriptive.DescStatUV.test_var"><code class="xref py py-obj docutils literal"><span class="pre">test_var</span></code></a>(sig2_0[,&nbsp;return_weights])</td>
+<td>Returns  -2 x log-likelihoog ratio and the p-value for the</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -188,9 +227,6 @@ mean, variance, kurtosis and skewness of a univariate random variable.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -199,7 +235,7 @@ mean, variance, kurtosis and skewness of a univariate random variable.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

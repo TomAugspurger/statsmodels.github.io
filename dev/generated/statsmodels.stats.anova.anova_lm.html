@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.stats.anova.anova_lm &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.stats.anova.anova_lm &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="ANOVA" href="../anova.html" />
     <link rel="next" title="Time Series analysis tsa" href="../tsa.html" />
-    <link rel="prev" title="statsmodels.stats.anova.anova_lm" href="" />
+    <link rel="prev" title="ANOVA" href="../anova.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -59,7 +59,7 @@
           <a href="../tsa.html" title="Time Series analysis tsa"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="#" title="statsmodels.stats.anova.anova_lm"
+          <a href="../anova.html" title="ANOVA"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -129,21 +129,21 @@ If robust covariance is desired, it is recommended to use <cite>hc3</cite>.</p>
 <p>Model statistics are given in the order of args. Models must have
 been fit using the formula api.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="k">import</span> <span class="n">ols</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">moore</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_rdataset</span><span class="p">(</span><span class="s">&quot;Moore&quot;</span><span class="p">,</span> <span class="s">&quot;car&quot;</span><span class="p">,</span>
-<span class="gp">... </span>                                 <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c"># load data</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">moore</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_rdataset</span><span class="p">(</span><span class="s2">&quot;Moore&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                                 <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># load data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">moore</span><span class="o">.</span><span class="n">data</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;partner.status&quot;</span> <span class="p">:</span>
-<span class="gp">... </span>                            <span class="s">&quot;partner_status&quot;</span><span class="p">})</span> <span class="c"># make name pythonic</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">moore_lm</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s">&#39;conformity ~ C(fcategory, Sum)*C(partner_status, Sum)&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;partner.status&quot;</span> <span class="p">:</span>
+<span class="gp">... </span>                            <span class="s2">&quot;partner_status&quot;</span><span class="p">})</span> <span class="c1"># make name pythonic</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">moore_lm</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="s1">&#39;conformity ~ C(fcategory, Sum)*C(partner_status, Sum)&#39;</span><span class="p">,</span>
 <span class="gp">... </span>                <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">moore_lm</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c"># Type 2 ANOVA DataFrame</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">table</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">moore_lm</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Type 2 ANOVA DataFrame</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">table</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -160,8 +160,8 @@ been fit using the formula api.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href=""
-                        title="previous chapter">statsmodels.stats.anova.anova_lm</a></p>
+  <p class="topless"><a href="../anova.html"
+                        title="previous chapter">ANOVA</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../tsa.html"
                         title="next chapter">Time Series analysis <code class="docutils literal"><span class="pre">tsa</span></code></a></p>
@@ -180,9 +180,6 @@ been fit using the formula api.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -191,7 +188,7 @@ been fit using the formula api.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

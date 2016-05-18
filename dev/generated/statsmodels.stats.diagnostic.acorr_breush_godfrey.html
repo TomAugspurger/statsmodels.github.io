@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.stats.diagnostic.acorr_breush_godfrey &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.stats.diagnostic.acorr_breush_godfrey &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
+    <link rel="up" title="Statistics stats" href="../stats.html" />
+    <link rel="next" title="statsmodels.stats.diagnostic.HetGoldfeldQuandt" href="statsmodels.stats.diagnostic.HetGoldfeldQuandt.html" />
+    <link rel="prev" title="statsmodels.stats.diagnostic.acorr_ljungbox" href="statsmodels.stats.diagnostic.acorr_ljungbox.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -52,13 +55,20 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="statsmodels.stats.diagnostic.HetGoldfeldQuandt.html" title="statsmodels.stats.diagnostic.HetGoldfeldQuandt"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="statsmodels.stats.diagnostic.acorr_ljungbox.html" title="statsmodels.stats.diagnostic.acorr_ljungbox"
+             accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
 <li><a href="https://github.com/statsmodels/statsmodels/issues">Bugs</a></li> &nbsp;|&nbsp;
 <li><a href="../dev/index.html">Develop</a></li> &nbsp;|&nbsp;
 <li><a href="../examples/index.html">Examples</a></li> &nbsp;|&nbsp;
 <li><a href="../faq.html">FAQ</a></li> &nbsp;|&nbsp;
- 
+
+          <li class="nav-item nav-item-1"><a href="../stats.html" accesskey="U">Statistics <code class="docutils literal"><span class="pre">stats</span></code></a> |</li> 
       </ul>
     </div>  
 
@@ -91,12 +101,12 @@ Use acorr_breusch_godfrey, acorr_breush_godfrey will be removed in 0.9
 correlation</p>
 </div></blockquote>
 <dl class="docutils">
-<dt>nlags <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of lags to include in the auxiliary regression. (nlags is
+<dt>nlags</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of lags to include in the auxiliary regression. (nlags is
 highest lag)</p>
 </dd>
-<dt>store <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If store is true, then an additional class instance that contains
+<dt>store</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">If store is true, then an additional class instance that contains
 intermediate results is returned.</p>
 </dd>
 </dl>
@@ -109,18 +119,18 @@ intermediate results is returned.</p>
 <div><p>Lagrange multiplier test statistic</p>
 </div></blockquote>
 <dl class="docutils">
-<dt>lmpval <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">p-value for Lagrange multiplier test</p>
+<dt>lmpval</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">p-value for Lagrange multiplier test</p>
 </dd>
-<dt>fval <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">fstatistic for F test, alternative version of the same test based on
+<dt>fval</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">fstatistic for F test, alternative version of the same test based on
 F test for the parameter restriction</p>
 </dd>
-<dt>fpval <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">pvalue for F test</p>
+<dt>fpval</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">pvalue for F test</p>
 </dd>
-<dt>resstore <span class="classifier-delimiter">:</span> <span class="classifier">instance (optional)</span></dt>
-<dd><p class="first last">a class instance that holds intermediate results. Only returned if
+<dt>resstore</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">instance (optional)</span><dd><p class="first last">a class instance that holds intermediate results. Only returned if
 store=True</p>
 </dd>
 </dl>
@@ -131,7 +141,8 @@ store=True</p>
 </table>
 <p class="rubric">Notes</p>
 <p>BG adds lags of residual to exog in the design matrix for the auxiliary
-regression with residuals as endog, see Greene 12.7.1.</p>
+regression with residuals as endog,
+see Greene 12.7.1.</p>
 </dd></dl>
 
 </div>
@@ -145,6 +156,12 @@ regression with residuals as endog, see Greene 12.7.1.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="statsmodels.stats.diagnostic.acorr_ljungbox.html"
+                        title="previous chapter">statsmodels.stats.diagnostic.acorr_ljungbox</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="statsmodels.stats.diagnostic.HetGoldfeldQuandt.html"
+                        title="next chapter">statsmodels.stats.diagnostic.HetGoldfeldQuandt</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -160,9 +177,6 @@ regression with residuals as endog, see Greene 12.7.1.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -171,7 +185,7 @@ regression with residuals as endog, see Greene 12.7.1.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

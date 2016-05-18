@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.discrete.discrete_model.Probit.hessian &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.discrete.discrete_model.Probit.hessian &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
     <link rel="up" title="statsmodels.discrete.discrete_model.Probit" href="statsmodels.discrete.discrete_model.Probit.html" />
-    <link rel="next" title="statsmodels.discrete.discrete_model.Probit.initialize" href="statsmodels.discrete.discrete_model.Probit.initialize.html" />
-    <link rel="prev" title="statsmodels.discrete.discrete_model.Probit.fit_regularized" href="statsmodels.discrete.discrete_model.Probit.fit_regularized.html" />
+    <link rel="next" title="statsmodels.discrete.discrete_model.Probit.information" href="statsmodels.discrete.discrete_model.Probit.information.html" />
+    <link rel="prev" title="statsmodels.discrete.discrete_model.Probit.from_formula" href="statsmodels.discrete.discrete_model.Probit.from_formula.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -56,10 +56,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="statsmodels.discrete.discrete_model.Probit.initialize.html" title="statsmodels.discrete.discrete_model.Probit.initialize"
+          <a href="statsmodels.discrete.discrete_model.Probit.information.html" title="statsmodels.discrete.discrete_model.Probit.information"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="statsmodels.discrete.discrete_model.Probit.fit_regularized.html" title="statsmodels.discrete.discrete_model.Probit.fit_regularized"
+          <a href="statsmodels.discrete.discrete_model.Probit.from_formula.html" title="statsmodels.discrete.discrete_model.Probit.from_formula"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -109,10 +109,10 @@ evaluated at <cite>params</cite></p>
 </table>
 <p class="rubric">Notes</p>
 <div class="math">
-<p><img src="../_images/math/fdbb626e6b23c9678256c93d36a61092ed5b64aa.png" alt="\frac{\partial^{2}\ln L}{\partial\beta\partial\beta^{\prime}}=-\lambda_{i}\left(\lambda_{i}+x_{i}^{\prime}\beta\right)x_{i}x_{i}^{\prime}"/></p>
+<p><img src="../_images/math/20562f5b0a00f4179709642664d84dba47197dc6.png" alt="\frac{\partial^{2}\ln L}{\partial\beta\partial\beta^{\prime}}=-\lambda_{i}\left(\lambda_{i}+x_{i}^{\prime}\beta\right)x_{i}x_{i}^{\prime}"/></p>
 </div><p>where</p>
 <div class="math">
-<p><img src="../_images/math/dafda13b38907f19ffb14329b71d32bf4edadf9d.png" alt="\lambda_{i}=\frac{q_{i}\phi\left(q_{i}x_{i}^{\prime}\beta\right)}{\Phi\left(q_{i}x_{i}^{\prime}\beta\right)}"/></p>
+<p><img src="../_images/math/b12bb034b9fa1537d9bdbe151c318eea3e83f6b0.png" alt="\lambda_{i}=\frac{q_{i}\phi\left(q_{i}x_{i}^{\prime}\beta\right)}{\Phi\left(q_{i}x_{i}^{\prime}\beta\right)}"/></p>
 </div><p>and <img class="math" src="../_images/math/97696a2969d5ea91d94e5fcb0cb371d92481d4ee.png" alt="q=2y-1" style="vertical-align: -4px"/></p>
 </dd></dl>
 
@@ -128,11 +128,11 @@ evaluated at <cite>params</cite></p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.discrete.discrete_model.Probit.fit_regularized.html"
-                        title="previous chapter">statsmodels.discrete.discrete_model.Probit.fit_regularized</a></p>
+  <p class="topless"><a href="statsmodels.discrete.discrete_model.Probit.from_formula.html"
+                        title="previous chapter">statsmodels.discrete.discrete_model.Probit.from_formula</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="statsmodels.discrete.discrete_model.Probit.initialize.html"
-                        title="next chapter">statsmodels.discrete.discrete_model.Probit.initialize</a></p>
+  <p class="topless"><a href="statsmodels.discrete.discrete_model.Probit.information.html"
+                        title="next chapter">statsmodels.discrete.discrete_model.Probit.information</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -148,9 +148,6 @@ evaluated at <cite>params</cite></p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -159,7 +156,7 @@ evaluated at <cite>params</cite></p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

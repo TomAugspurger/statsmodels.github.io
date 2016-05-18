@@ -45,7 +45,7 @@ R Datasets Function Reference
    get_rdataset
    get_data_home
    clear_data_home
-
+   
 
 Available Datasets
 ------------------

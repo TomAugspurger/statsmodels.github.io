@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.genmod.families.family.Family &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.genmod.families.family.Family &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,10 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
-    <link rel="up" title="Generalized Estimating Equations" href="../gee.html" />
-    <link rel="next" title="statsmodels.genmod.families.family.Family.deviance" href="statsmodels.genmod.families.family.Family.deviance.html" />
-    <link rel="prev" title="statsmodels.genmod.cov_struct.Nested.update" href="statsmodels.genmod.cov_struct.Nested.update.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
+    <link rel="up" title="Generalized Linear Models" href="../glm.html" />
+    <link rel="prev" title="statsmodels.genmod.generalized_linear_model.GLMResults.wald_test_terms" href="statsmodels.genmod.generalized_linear_model.GLMResults.wald_test_terms.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -56,10 +55,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="statsmodels.genmod.families.family.Family.deviance.html" title="statsmodels.genmod.families.family.Family.deviance"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="statsmodels.genmod.cov_struct.Nested.update.html" title="statsmodels.genmod.cov_struct.Nested.update"
+          <a href="statsmodels.genmod.generalized_linear_model.GLMResults.wald_test_terms.html" title="statsmodels.genmod.generalized_linear_model.GLMResults.wald_test_terms"
              accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
@@ -68,7 +64,7 @@
 <li><a href="../examples/index.html">Examples</a></li> &nbsp;|&nbsp;
 <li><a href="../faq.html">FAQ</a></li> &nbsp;|&nbsp;
 
-          <li class="nav-item nav-item-1"><a href="../gee.html" accesskey="U">Generalized Estimating Equations</a> |</li> 
+          <li class="nav-item nav-item-1"><a href="../glm.html" accesskey="U">Generalized Linear Models</a> |</li> 
       </ul>
     </div>  
 
@@ -107,8 +103,20 @@ See the individual families for the default variance function.</p>
 </table>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="../glm.html#links"><span>Link Functions</span></a></p>
+<p class="last"><a class="reference internal" href="../glm.html#links"><span class="std std-ref">Link Functions</span></a></p>
 </div>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">link</span></code></td>
+<td>Link function for family</td>
+</tr>
+</tbody>
+</table>
 <p class="rubric">Methods</p>
 <table border="1" class="longtable docutils">
 <colgroup>
@@ -116,13 +124,13 @@ See the individual families for the default variance function.</p>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.deviance.html#statsmodels.genmod.families.family.Family.deviance" title="statsmodels.genmod.families.family.Family.deviance"><code class="xref py py-obj docutils literal"><span class="pre">deviance</span></code></a>(endog,&nbsp;mu[,&nbsp;scale])</td>
-<td>Deviance of (endog,mu) pair.</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.deviance.html#statsmodels.genmod.families.family.Family.deviance" title="statsmodels.genmod.families.family.Family.deviance"><code class="xref py py-obj docutils literal"><span class="pre">deviance</span></code></a>(endog,&nbsp;mu[,&nbsp;freq_weights,&nbsp;scale])</td>
+<td>The deviance function evaluated at (endog,mu,freq_weights,mu).</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.fitted.html#statsmodels.genmod.families.family.Family.fitted" title="statsmodels.genmod.families.family.Family.fitted"><code class="xref py py-obj docutils literal"><span class="pre">fitted</span></code></a>(lin_pred)</td>
 <td>Fitted values based on linear predictors lin_pred.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.loglike.html#statsmodels.genmod.families.family.Family.loglike" title="statsmodels.genmod.families.family.Family.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(endog,&nbsp;mu[,&nbsp;scale])</td>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.loglike.html#statsmodels.genmod.families.family.Family.loglike" title="statsmodels.genmod.families.family.Family.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(endog,&nbsp;mu[,&nbsp;freq_weights,&nbsp;scale])</td>
 <td>The log-likelihood function in terms of the fitted mean response.</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.predict.html#statsmodels.genmod.families.family.Family.predict" title="statsmodels.genmod.families.family.Family.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(mu)</td>
@@ -131,7 +139,40 @@ See the individual families for the default variance function.</p>
 <tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.resid_anscombe.html#statsmodels.genmod.families.family.Family.resid_anscombe" title="statsmodels.genmod.families.family.Family.resid_anscombe"><code class="xref py py-obj docutils literal"><span class="pre">resid_anscombe</span></code></a>(endog,&nbsp;mu)</td>
 <td>The Anscome residuals.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.resid_dev.html#statsmodels.genmod.families.family.Family.resid_dev" title="statsmodels.genmod.families.family.Family.resid_dev"><code class="xref py py-obj docutils literal"><span class="pre">resid_dev</span></code></a>(endog,&nbsp;mu[,&nbsp;scale])</td>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.resid_dev.html#statsmodels.genmod.families.family.Family.resid_dev" title="statsmodels.genmod.families.family.Family.resid_dev"><code class="xref py py-obj docutils literal"><span class="pre">resid_dev</span></code></a>(endog,&nbsp;mu[,&nbsp;freq_weights,&nbsp;scale])</td>
+<td>The deviance residuals</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.starting_mu.html#statsmodels.genmod.families.family.Family.starting_mu" title="statsmodels.genmod.families.family.Family.starting_mu"><code class="xref py py-obj docutils literal"><span class="pre">starting_mu</span></code></a>(y)</td>
+<td>Starting value for mu in the IRLS algorithm.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.weights.html#statsmodels.genmod.families.family.Family.weights" title="statsmodels.genmod.families.family.Family.weights"><code class="xref py py-obj docutils literal"><span class="pre">weights</span></code></a>(mu)</td>
+<td>Weights for IRLS steps</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.deviance.html#statsmodels.genmod.families.family.Family.deviance" title="statsmodels.genmod.families.family.Family.deviance"><code class="xref py py-obj docutils literal"><span class="pre">deviance</span></code></a>(endog,&nbsp;mu[,&nbsp;freq_weights,&nbsp;scale])</td>
+<td>The deviance function evaluated at (endog,mu,freq_weights,mu).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.fitted.html#statsmodels.genmod.families.family.Family.fitted" title="statsmodels.genmod.families.family.Family.fitted"><code class="xref py py-obj docutils literal"><span class="pre">fitted</span></code></a>(lin_pred)</td>
+<td>Fitted values based on linear predictors lin_pred.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.loglike.html#statsmodels.genmod.families.family.Family.loglike" title="statsmodels.genmod.families.family.Family.loglike"><code class="xref py py-obj docutils literal"><span class="pre">loglike</span></code></a>(endog,&nbsp;mu[,&nbsp;freq_weights,&nbsp;scale])</td>
+<td>The log-likelihood function in terms of the fitted mean response.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.predict.html#statsmodels.genmod.families.family.Family.predict" title="statsmodels.genmod.families.family.Family.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(mu)</td>
+<td>Linear predictors based on given mu values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.resid_anscombe.html#statsmodels.genmod.families.family.Family.resid_anscombe" title="statsmodels.genmod.families.family.Family.resid_anscombe"><code class="xref py py-obj docutils literal"><span class="pre">resid_anscombe</span></code></a>(endog,&nbsp;mu)</td>
+<td>The Anscome residuals.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.resid_dev.html#statsmodels.genmod.families.family.Family.resid_dev" title="statsmodels.genmod.families.family.Family.resid_dev"><code class="xref py py-obj docutils literal"><span class="pre">resid_dev</span></code></a>(endog,&nbsp;mu[,&nbsp;freq_weights,&nbsp;scale])</td>
 <td>The deviance residuals</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="statsmodels.genmod.families.family.Family.starting_mu.html#statsmodels.genmod.families.family.Family.starting_mu" title="statsmodels.genmod.families.family.Family.starting_mu"><code class="xref py py-obj docutils literal"><span class="pre">starting_mu</span></code></a>(y)</td>
@@ -156,11 +197,8 @@ See the individual families for the default variance function.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="statsmodels.genmod.cov_struct.Nested.update.html"
-                        title="previous chapter">statsmodels.genmod.cov_struct.Nested.update</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="statsmodels.genmod.families.family.Family.deviance.html"
-                        title="next chapter">statsmodels.genmod.families.family.Family.deviance</a></p>
+  <p class="topless"><a href="statsmodels.genmod.generalized_linear_model.GLMResults.wald_test_terms.html"
+                        title="previous chapter">statsmodels.genmod.generalized_linear_model.GLMResults.wald_test_terms</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -176,9 +214,6 @@ See the individual families for the default variance function.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -187,7 +222,7 @@ See the individual families for the default variance function.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

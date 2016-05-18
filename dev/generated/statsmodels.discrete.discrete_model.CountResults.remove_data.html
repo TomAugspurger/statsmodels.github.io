@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.discrete.discrete_model.CountResults.remove_data &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.discrete.discrete_model.CountResults.remove_data &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
+    <link rel="up" title="statsmodels.discrete.discrete_model.CountResults" href="statsmodels.discrete.discrete_model.CountResults.html" />
+    <link rel="next" title="statsmodels.discrete.discrete_model.CountResults.resid" href="statsmodels.discrete.discrete_model.CountResults.resid.html" />
+    <link rel="prev" title="statsmodels.discrete.discrete_model.CountResults.pvalues" href="statsmodels.discrete.discrete_model.CountResults.pvalues.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -52,13 +55,21 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="statsmodels.discrete.discrete_model.CountResults.resid.html" title="statsmodels.discrete.discrete_model.CountResults.resid"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="statsmodels.discrete.discrete_model.CountResults.pvalues.html" title="statsmodels.discrete.discrete_model.CountResults.pvalues"
+             accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
 <li><a href="https://github.com/statsmodels/statsmodels/issues">Bugs</a></li> &nbsp;|&nbsp;
 <li><a href="../dev/index.html">Develop</a></li> &nbsp;|&nbsp;
 <li><a href="../examples/index.html">Examples</a></li> &nbsp;|&nbsp;
 <li><a href="../faq.html">FAQ</a></li> &nbsp;|&nbsp;
- 
+
+          <li class="nav-item nav-item-1"><a href="../discretemod.html" >Regression with Discrete Dependent Variable</a> |</li>
+          <li class="nav-item nav-item-2"><a href="statsmodels.discrete.discrete_model.CountResults.html" accesskey="U">statsmodels.discrete.discrete_model.CountResults</a> |</li> 
       </ul>
     </div>  
 
@@ -89,9 +100,18 @@ that has been set to None.</p>
 </div>
 <p>Not fully tested for time series models, tsa, and might delete too much
 for prediction or not all that would be possible.</p>
-<p>The list of arrays to delete is maintained as an attribute of the
-result and model instance, except for cached values. These lists could
-be changed before calling remove_data.</p>
+<p>The lists of arrays to delete are maintained as attributes of
+the result and model instance, except for cached values. These
+lists could be changed before calling remove_data.</p>
+<p>The attributes to remove are named in:</p>
+<dl class="docutils">
+<dt>model._data_attr</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">arrays attached to both the model instance</span><dd>and the results instance with the same attribute name.</dd>
+<dt>result.data_in_cache</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">arrays that may exist as values in</span><dd>result._cache (TODO : should privatize name)</dd>
+<dt>result._data_attr_model</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">arrays attached to the model</span><dd>instance but not to the results instance</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -105,6 +125,12 @@ be changed before calling remove_data.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="statsmodels.discrete.discrete_model.CountResults.pvalues.html"
+                        title="previous chapter">statsmodels.discrete.discrete_model.CountResults.pvalues</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="statsmodels.discrete.discrete_model.CountResults.resid.html"
+                        title="next chapter">statsmodels.discrete.discrete_model.CountResults.resid</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -120,9 +146,6 @@ be changed before calling remove_data.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -131,7 +154,7 @@ be changed before calling remove_data.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

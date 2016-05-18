@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.discrete.discrete_model.NegativeBinomialResults.t_test &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.discrete.discrete_model.NegativeBinomialResults.t_test &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
+    <link rel="up" title="statsmodels.discrete.discrete_model.NegativeBinomialResults" href="statsmodels.discrete.discrete_model.NegativeBinomialResults.html" />
+    <link rel="next" title="statsmodels.discrete.discrete_model.NegativeBinomialResults.tvalues" href="statsmodels.discrete.discrete_model.NegativeBinomialResults.tvalues.html" />
+    <link rel="prev" title="statsmodels.discrete.discrete_model.NegativeBinomialResults.summary2" href="statsmodels.discrete.discrete_model.NegativeBinomialResults.summary2.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -52,13 +55,21 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="statsmodels.discrete.discrete_model.NegativeBinomialResults.tvalues.html" title="statsmodels.discrete.discrete_model.NegativeBinomialResults.tvalues"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="statsmodels.discrete.discrete_model.NegativeBinomialResults.summary2.html" title="statsmodels.discrete.discrete_model.NegativeBinomialResults.summary2"
+             accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
 <li><a href="https://github.com/statsmodels/statsmodels/issues">Bugs</a></li> &nbsp;|&nbsp;
 <li><a href="../dev/index.html">Develop</a></li> &nbsp;|&nbsp;
 <li><a href="../examples/index.html">Examples</a></li> &nbsp;|&nbsp;
 <li><a href="../faq.html">FAQ</a></li> &nbsp;|&nbsp;
- 
+
+          <li class="nav-item nav-item-1"><a href="../discretemod.html" >Regression with Discrete Dependent Variable</a> |</li>
+          <li class="nav-item nav-item-2"><a href="statsmodels.discrete.discrete_model.NegativeBinomialResults.html" accesskey="U">statsmodels.discrete.discrete_model.NegativeBinomialResults</a> |</li> 
       </ul>
     </div>  
 
@@ -131,24 +142,24 @@ in <cite>summary()</cite>.</p>
 <dt><a class="reference internal" href="statsmodels.discrete.discrete_model.NegativeBinomialResults.f_test.html#statsmodels.discrete.discrete_model.NegativeBinomialResults.f_test" title="statsmodels.discrete.discrete_model.NegativeBinomialResults.f_test"><code class="xref py py-obj docutils literal"><span class="pre">f_test</span></code></a></dt>
 <dd>for F tests</dd>
 </dl>
-<p class="last"><a class="reference external" href="http://patsy.readthedocs.org/en/latest/API-reference.html#patsy.DesignInfo.linear_constraint" title="(in patsy v0.3.0-dev)"><code class="xref py py-obj docutils literal"><span class="pre">patsy.DesignInfo.linear_constraint</span></code></a></p>
+<p class="last"><a class="reference external" href="http://patsy.readthedocs.org/en/latest/API-reference.html#patsy.DesignInfo.linear_constraint" title="(in patsy v0.4.1+dev)"><code class="xref py py-obj docutils literal"><span class="pre">patsy.DesignInfo.linear_constraint</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">longley</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="o">.</span><span class="n">exog</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">exog</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">endog</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">exog</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">[ 0.  0.  0.  0.  0.  1. -1.]</span>
 </pre></div>
 </div>
 <p>r tests that the coefficients on the 5th and 6th independent
 variable are the same.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">T_test</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">t_test</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">T_test</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">T_test</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">t_test</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">T_test</span><span class="p">)</span>
 <span class="go">&lt;T contrast: effect=-1829.2025687192481, sd=455.39079425193762,</span>
 <span class="go">t=-4.0167754636411717, p=0.0015163772380899498, df_denom=9&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">T_test</span><span class="o">.</span><span class="n">effect</span>
@@ -162,13 +173,13 @@ variable are the same.</p>
 </pre></div>
 </div>
 <p>Alternatively, you can specify the hypothesis tests using a string</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="k">import</span> <span class="n">ols</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dta</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">longley</span><span class="o">.</span><span class="n">load_pandas</span><span class="p">()</span><span class="o">.</span><span class="n">data</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">formula</span> <span class="o">=</span> <span class="s">&#39;TOTEMP ~ GNPDEFL + GNP + UNEMP + ARMED + POP + YEAR&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">formula</span> <span class="o">=</span> <span class="s1">&#39;TOTEMP ~ GNPDEFL + GNP + UNEMP + ARMED + POP + YEAR&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">dta</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hypotheses</span> <span class="o">=</span> <span class="s">&#39;GNPDEFL = GNP, UNEMP = 2, YEAR/1829 = 1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hypotheses</span> <span class="o">=</span> <span class="s1">&#39;GNPDEFL = GNP, UNEMP = 2, YEAR/1829 = 1&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t_test</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">t_test</span><span class="p">(</span><span class="n">hypotheses</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">t_test</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -184,6 +195,12 @@ variable are the same.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="statsmodels.discrete.discrete_model.NegativeBinomialResults.summary2.html"
+                        title="previous chapter">statsmodels.discrete.discrete_model.NegativeBinomialResults.summary2</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="statsmodels.discrete.discrete_model.NegativeBinomialResults.tvalues.html"
+                        title="next chapter">statsmodels.discrete.discrete_model.NegativeBinomialResults.tvalues</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -199,9 +216,6 @@ variable are the same.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -210,7 +224,7 @@ variable are the same.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

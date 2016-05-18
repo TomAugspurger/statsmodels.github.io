@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>statsmodels.tsa.statespace.sarimax.SARIMAX.fit &mdash; statsmodels 0.7.0 documentation</title>
+    <title>statsmodels.tsa.statespace.sarimax.SARIMAX.fit &mdash; statsmodels 0.8.0 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.7.0',
+        VERSION:     '0.8.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,7 +26,10 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/statsmodels_hybi_favico.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="statsmodels 0.7.0 documentation" href="../index.html" />
+    <link rel="top" title="statsmodels 0.8.0 documentation" href="../index.html" />
+    <link rel="up" title="statsmodels.tsa.statespace.sarimax.SARIMAX" href="statsmodels.tsa.statespace.sarimax.SARIMAX.html" />
+    <link rel="next" title="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula" href="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula.html" />
+    <link rel="prev" title="statsmodels.tsa.statespace.sarimax.SARIMAX.filter" href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html" />
 <link rel="stylesheet" href="../../_static/facebox.css" type="text/css" />
 <link rel="stylesheet" href="../_static/examples.css" type="text/css" />
 <script type="text/javascript" src="../_static/scripts.js">
@@ -52,13 +55,21 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula.html" title="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html" title="statsmodels.tsa.statespace.sarimax.SARIMAX.filter"
+             accesskey="P">previous</a> |</li>
 <li><a href ="../install.html">Install</a></li> &nbsp;|&nbsp;
 <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li> &nbsp;|&nbsp;
 <li><a href="https://github.com/statsmodels/statsmodels/issues">Bugs</a></li> &nbsp;|&nbsp;
 <li><a href="../dev/index.html">Develop</a></li> &nbsp;|&nbsp;
 <li><a href="../examples/index.html">Examples</a></li> &nbsp;|&nbsp;
 <li><a href="../faq.html">FAQ</a></li> &nbsp;|&nbsp;
- 
+
+          <li class="nav-item nav-item-1"><a href="../statespace.html" >Time Series Analysis by State Space Methods <code class="docutils literal"><span class="pre">statespace</span></code></a> |</li>
+          <li class="nav-item nav-item-2"><a href="statsmodels.tsa.statespace.sarimax.SARIMAX.html" accesskey="U">statsmodels.tsa.statespace.sarimax.SARIMAX</a> |</li> 
       </ul>
     </div>  
 
@@ -75,7 +86,7 @@
 <h1>statsmodels.tsa.statespace.sarimax.SARIMAX.fit<a class="headerlink" href="#statsmodels-tsa-statespace-sarimax-sarimax-fit" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="statsmodels.tsa.statespace.sarimax.SARIMAX.fit">
-<code class="descclassname">SARIMAX.</code><code class="descname">fit</code><span class="sig-paren">(</span><em>start_params=None</em>, <em>transformed=True</em>, <em>cov_type='opg'</em>, <em>cov_kwds=None</em>, <em>method='lbfgs'</em>, <em>maxiter=50</em>, <em>full_output=1</em>, <em>disp=5</em>, <em>callback=None</em>, <em>return_params=False</em>, <em>optim_hessian=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#statsmodels.tsa.statespace.sarimax.SARIMAX.fit" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">SARIMAX.</code><code class="descname">fit</code><span class="sig-paren">(</span><em>start_params=None</em>, <em>transformed=True</em>, <em>cov_type='opg'</em>, <em>cov_kwds=None</em>, <em>method='lbfgs'</em>, <em>maxiter=50</em>, <em>full_output=1</em>, <em>disp=5</em>, <em>callback=None</em>, <em>return_params=False</em>, <em>optim_score=None</em>, <em>optim_complex_step=None</em>, <em>optim_hessian=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#statsmodels.tsa.statespace.sarimax.SARIMAX.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fits the model by maximum likelihood via Kalman filter.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -90,6 +101,39 @@ If None, the default is given by Model.start_params.</p>
 <blockquote>
 <div><p>Whether or not <cite>start_params</cite> is already transformed. Default is
 True.</p>
+</div></blockquote>
+<p><strong>cov_type</strong> : str, optional</p>
+<blockquote>
+<div><p>The <cite>cov_type</cite> keyword governs the method for calculating the
+covariance matrix of parameter estimates. Can be one of:</p>
+<ul class="simple">
+<li>&#8216;opg&#8217; for the outer product of gradient estimator</li>
+<li>&#8216;oim&#8217; for the observed information matrix estimator, calculated
+using the method of Harvey (1989)</li>
+<li>&#8216;approx&#8217; for the observed information matrix estimator,
+calculated using a numerical approximation of the Hessian matrix.</li>
+<li>&#8216;robust&#8217; for an approximate (quasi-maximum likelihood) covariance
+matrix that may be valid even in the presense of some
+misspecifications. Intermediate calculations use the &#8216;oim&#8217;
+method.</li>
+<li>&#8216;robust_approx&#8217; is the same as &#8216;robust&#8217; except that the
+intermediate calculations use the &#8216;approx&#8217; method.</li>
+<li>&#8216;none&#8217; for no covariance matrix calculation.</li>
+</ul>
+</div></blockquote>
+<p><strong>cov_kwds</strong> : dict or None, optional</p>
+<blockquote>
+<div><p>A dictionary of arguments affecting covariance matrix computation.</p>
+<p><strong>opg, oim, approx, robust, robust_approx</strong></p>
+<ul class="simple">
+<li>&#8216;approx_complex_step&#8217; : boolean, optional - If True, numerical
+approximations are computed using complex-step methods. If False,
+numerical approximations are computed using finite difference
+methods. Default is True.</li>
+<li>&#8216;approx_centered&#8217; : boolean, optional - If True, numerical
+approximations computed using finite difference methods use a
+centered approximation. Default is False.</li>
+</ul>
 </div></blockquote>
 <p><strong>method</strong> : str, optional</p>
 <blockquote>
@@ -110,35 +154,6 @@ solver has several optional arguments that are not the same across
 solvers. See the notes section below (or scipy.optimize) for the
 available arguments and for the list of explicit arguments that the
 basin-hopping solver supports.</p>
-</div></blockquote>
-<p><strong>cov_type</strong> : str, optional</p>
-<blockquote>
-<div><p>The <cite>cov_type</cite> keyword governs the method for calculating the
-covariance matrix of parameter estimates. Can be one of:</p>
-<ul class="simple">
-<li>&#8216;opg&#8217; for the outer product of gradient estimator</li>
-<li>&#8216;oim&#8217; for the observed information matrix estimator, calculated
-using the method of Harvey (1989)</li>
-<li>&#8216;cs&#8217; for the observed information matrix estimator, calculated
-using a numerical (complex step) approximation of the Hessian
-matrix.</li>
-<li>&#8216;delta&#8217; for the observed information matrix estimator, calculated
-using a numerical (complex step) approximation of the Hessian
-along with the delta method (method of propagation of errors)
-applied to the parameter transformation function
-<cite>transform_params</cite>.</li>
-<li>&#8216;robust&#8217; for an approximate (quasi-maximum likelihood) covariance
-matrix that may be valid even in the presense of some
-misspecifications. Intermediate calculations use the &#8216;oim&#8217;
-method.</li>
-<li>&#8216;robust_cs&#8217; is the same as &#8216;robust&#8217; except that the intermediate
-calculations use the &#8216;cs&#8217; method.</li>
-</ul>
-</div></blockquote>
-<p><strong>cov_kwds</strong> : dict or None, optional</p>
-<blockquote>
-<div><p>See <cite>MLEResults.get_robustcov_results</cite> for a description required
-keywords for alternative covariance estimators</p>
 </div></blockquote>
 <p><strong>maxiter</strong> : int, optional</p>
 <blockquote>
@@ -164,12 +179,28 @@ current parameter vector.</p>
 <div><p>Whether or not to return only the array of maximizing parameters.
 Default is False.</p>
 </div></blockquote>
-<p><strong>optim_hessian</strong> : {&#8216;opg&#8217;,&#8217;oim&#8217;,&#8217;cs&#8217;}, optional</p>
+<p><strong>optim_score</strong> : {&#8216;harvey&#8217;, &#8216;approx&#8217;} or None, optional</p>
+<blockquote>
+<div><p>The method by which the score vector is calculated. &#8216;harvey&#8217; uses
+the method from Harvey (1989), &#8216;approx&#8217; uses either finite
+difference or complex step differentiation depending upon the
+value of <cite>optim_complex_step</cite>, and None uses the built-in gradient
+approximation of the optimizer. Default is None. This keyword is
+only relevant if the optimization method uses the score.</p>
+</div></blockquote>
+<p><strong>optim_complex_step</strong> : bool, optional</p>
+<blockquote>
+<div><p>Whether or not to use complex step differentiation when
+approximating the score; if False, finite difference approximation
+is used. Default is True. This keyword is only relevant if
+<cite>optim_score</cite> is set to &#8216;harvey&#8217; or &#8216;approx&#8217;.</p>
+</div></blockquote>
+<p><strong>optim_hessian</strong> : {&#8216;opg&#8217;,&#8217;oim&#8217;,&#8217;approx&#8217;}, optional</p>
 <blockquote>
 <div><p>The method by which the Hessian is numerically approximated. &#8216;opg&#8217;
 uses outer product of gradients, &#8216;oim&#8217; uses the information
-matrix formula from Harvey (1989), and &#8216;cs&#8217; uses second-order
-complex step differentiation. This keyword is only relevant if the
+matrix formula from Harvey (1989), and &#8216;approx&#8217; uses numerical
+approximation. This keyword is only relevant if the
 optimization method uses the Hessian matrix.</p>
 </div></blockquote>
 <p><strong>**kwargs</strong></p>
@@ -200,6 +231,12 @@ optimization method uses the Hessian matrix.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="statsmodels.tsa.statespace.sarimax.SARIMAX.filter.html"
+                        title="previous chapter">statsmodels.tsa.statespace.sarimax.SARIMAX.filter</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula.html"
+                        title="next chapter">statsmodels.tsa.statespace.sarimax.SARIMAX.from_formula</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -215,9 +252,6 @@ optimization method uses the Hessian matrix.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -226,7 +260,7 @@ optimization method uses the Hessian matrix.</p>
     </div>
     <div class="footer" role="contentinfo">
         &copy; Copyright 2009-2013, Josef Perktold, Skipper Seabold, Jonathan Taylor, statsmodels-developers.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>
